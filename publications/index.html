@@ -93,13 +93,13 @@
       <ol class="bibliography">
 		<li><div class="row m-0 mt-3 p-0">
 			 <div class="col-sm-1 p-0 abbr">
-        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://humanrobotinteraction.org/2020/" target="_blank">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA2020/www.icra2020.org/index.html" target="_blank">
           HRI
         </a>
 			</div>
   <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
     
-    <div id="bobu2020HRI" class="col p-0">
+    <div id="zhang2020ICRA" class="col p-0">
       <h5 class="title mb-0"> Learning Grasping Points for Garment Manipulation in Robot-Assisted Dressing</h5>
       <div class="author">
                 
@@ -113,13 +113,13 @@
 
       <div>
         <p class="periodical font-italic">
-          ACM/IEEE International Conference on Human Robot Interaction (HRI), 2020
+          IEEE International Conference on Robotics and Automation (ICRA), 2020
         </p>
       </div>
     
       <div class="col p-0">
         
-          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#bobu2020HRI-abstract" role="button" aria-expanded="false" aria-controls="bobu2020HRI-abstract">Abstract</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2020ICRA-abstract" role="button" aria-expanded="false" aria-controls="zhang2020ICRA-abstract">Abstract</a>
         
           <a class="badge grey waves-effect font-weight-light mr-1" href="/assets/pdf/less/bobu2020HRI.pdf" target="_blank">PDF</a>
         
@@ -129,7 +129,7 @@
       <div class="col mt-2 p-0">
         <div id="bobu2020HRI-abstract" class="collapse">
           <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
-            Robots need models of human behavior for both inferring human goals and preferences, and predicting what people will do. A common model is the Boltzmann noisily-rational decision model, which assumes people approximately optimize a reward function and choose trajectories in proportion to their exponentiated reward. While this model has been successful in a variety of robotics domains, its roots lie in econometrics, and in modeling decisions among different discrete options, each with its own utility or reward. In contrast, human trajectories lie in a continuous space, with continuous-valued features that influence the reward function. We propose that it is time to rethink the Boltzmann model, and design it from the ground up to operate over such trajectory spaces. We introduce a model that explicitly accounts for distances between trajectories, rather than only their rewards. Rather than each trajectory affecting the decision independently, similar trajectories now affect the decision together. We start by showing that our model better explains human behavior in a user study. We then analyze the implications this has for robot inference, first in toy environments where we have ground truth and find more accurate inference, and finally for a 7DOF robot arm learning from user demonstrations.
+            Assistive robots have the potential to provide tremendous support for disabled and elderly people in their daily dressing activities. Recent studies on robot-assisted dressing usually simplify the setup of the initial robot configuration by manually attaching the garments on the robot end-effector and positioning them close to the user's arm. A fundamental challenge in automating such a process for robots is computing suitable grasping points on garments that facilitate robotic manipulation. In this paper, we address this problem by introducing a supervised deep neural network to locate a pre-defined grasping point on the garment, using depth images for their invariance to color and texture. To reduce the amount of real data required, which is costly to collect, we leverage the power of simulation to produce large amounts of labeled data. The network is jointly trained with synthetic datasets of depth images and a limited amount of real data. We introduce a robot-assisted dressing system that combines the grasping point prediction method, with a grasping and manipulation strategy which takes grasping orientation computation and robot-garment collision avoidance into account. The experimental results demonstrate that our method is capable of yielding accurate grasping point estimations. The proposed dressing system enables the Baxter robot to autonomously grasp a hospital gown hung on a rail, bring it close to the user and successfully dress the upper-body. 
           </div>
         </div>
       </div>
