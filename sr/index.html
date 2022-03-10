@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Dr Fan Zhang | Science Robotics</title>
+  <title>Dr Fan Zhang | Publications</title>
   <meta name="description" content="A beautiful Jekyll theme for academics">
 
   <!-- Fonts and Icons -->
@@ -53,7 +53,6 @@
                   <a class="nav-link" href="/publications/">
                     Publications
                     
-                    
                   </a>
               </li>
             
@@ -67,7 +66,8 @@
               <li class="nav-item ">
                   <a class="nav-link" href="/sr/">
                     Science Robotics
- 			<span class="sr-only">(current)</span>
+
+                      <span class="sr-only">(current)</span>
                     
                   </a>
               </li>
@@ -77,222 +77,522 @@
     </div>
   </nav>
 
-<figure class="figure" id="fig1">
-    <img alt="compilation-of-anymal-in-the-wild" src="assets/img/figure1.png" class="figure">
-</figure>
+  <!-- Scrolling Progress Bar -->
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
 
-<div class="paper-title">
-    {{ page.title }}
-</div>
-
-
-<div class="paper-authors">
-    <a href="https://scholar.google.com/citations?user=6Htb7swAAAAJ&hl=en">Fan Zhang<sup>1,*</sup></a>, 
-    and <a href="https://scholar.google.com/citations?user=Uam1ZB8AAAAJ&hl=en&oi=ao">Jemin Hwangbo<sup>1,2,†</sup></a>, 
-</div>
-
-<div class="paper-affiliations">
-    <sup>1</sup> Robotic Systems Lab, ETH Zurich
-    <br><sup>2</sup> Robotics and Artificial Intelligence Lab, KAIST
-    <br><sup>3</sup> Intelligent Systems Lab, Intel
-    <br>
-    <em>
-        <br><sup>†</sup> Substantial part of the work was carried out during his stay at 1
-        <br><sup>*</sup> Corresponding author: jolee@ethz.ch
-    </em>
-</div>
+  <!-- Content -->
+  <div class="content">
+    
+  <h1>Publications</h1>
 
 
-<h3>Paper links</h3>
+<p><br /></p>
 
-<span style="color:#707070">
-    <p class="paper-paragraph">
-        <a href="https://robotics.sciencemag.org/content/5/47/eabc5986">Science Robotics Vol.5 eabc5986 (2020)</a>
-        <br>Author's version <a href="https://arxiv.org/abs/2010.11251">PDF</a>
-    </p></span>
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2022</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA2020/www.icra2020.org/index.html" target="_blank">
+          SR
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2022SR" class="col p-0">
+      <h5 class="title mb-0"> Learning Garment Manipulation Policies towards Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
 
-
-<hr class="thick2">
-
-<h2 id="abs">ABSTRACT</h2>
-<p class="paper-paragraph">
-    Legged locomotion can extend the operational domain of robots to some of the most challenging environments
-    on Earth. However, conventional controllers for legged locomotion are based on elaborate state machines that
-    explicitly trigger the execution of motion primitives and reflexes. These designs have increased in complexity but
-    fallen short of the generality and robustness of animal locomotion. Here, we present a robust controller for blind
-    quadrupedal locomotion in challenging natural environments. Our approach incorporates proprioceptive feedback
-    in locomotion control and demonstrates zero-shot generalization from simulation to natural environments. The
-    controller is trained by reinforcement learning in simulation. The controller is driven by a neural network policy
-    that acts on a stream of proprioceptive signals. The controller retains its robustness under conditions that were
-    never encountered during training: deformable terrains such as mud and snow, dynamic footholds such as rubble,
-    and overground impediments such as thick vegetation and gushing water. The presented work indicates that
-    robust locomotion in natural environments can be achieved by training in simple domains.
-</p>
-
-
-<hr class="thick">
-<figcaption>
-    Summary video
-</figcaption>
-
-<div class="videoWrapper" id="movie1">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9j2a1oAHDL8" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-</div>
-
-
-<div>
-    <hr class="thick2">
-    <h2 id="featured">Highlights</h2>
-    <div style=" padding-bottom: 1rem;">
-            <em><h3>Zero-shot generalization to unknown environments</h3></em>
+      <div>
+        <p class="periodical font-italic">
+        <nobr><em style="color:orange;">Science Robotics</em></nobr>, 2022
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2022SR-abstract" role="button" aria-expanded="false" aria-controls="zhang2022SR-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/9196994" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=yVScTBbw7E4" target="_blank">Video</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2022SR-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Assistive robots have the potential to support people with disabilities in a variety of activities of daily living such as dressing. People who have completely lost their upper limb movement functionality may benefit from robot-assisted dressing, which involves complex deformable garment manipulation. Here we report a dressing pipeline intended for these people, and experimentally validate it on a medical training manikin. The pipeline is comprised of the robot grasping a hospital gown hung on a rail, fully unfolding the gown, navigating around a bed, and lifting up the user’s arms in sequence to finally dress the user. To automate this pipeline, we address two fundamental challenges: first, learning manipulation policies to bring the garment from an uncertain state into a configuration that facilitates robust dressing; second, transferring the deformable object manipulation policies learned in simulation to real world to leverage cost-effective data generation. We tackle the first challenge by proposing an active pre-grasp manipulation approach that learns to isolate the garment grasping area prior to grasping. The approach combines prehensile and non-prehensile actions, and thus alleviates grasping-only behavioral uncertainties. For the second challenge, we bridge the sim-to-real gap of deformable object policy transfer by approximating the simulator to real-world garment physics. A contrastive neural network is introduced to compare pairs of real and simulated garment observations, measure their physical similarity and account for simulator parameters inaccuracies. The proposed method enables a dual-arm robot to put back-opening hospital gowns onto a medical manikin with a success rate of over 90%.  
+          </div>
         </div>
-
-    <figcaption>
-        Figure 1. A number of specific deployments
-        <span style="font-size: 1rem; color:#595959">(paper Figure 2)</span>
-    </figcaption>
-    <figure class="figure" id="fig2">
-        <img alt="figure2" src="assets/img/figure2.png">
-    </figure>
-
-
-    <p class="paper-paragraph">
-        The presented controller has been deployed in diverse natural environments.
-        These include steep mountain trails, creeks with running water, mud, thick vegetation, loose rubble,
-        snow-covered
-        hills, and a damp forest.
-        A number of specific scenarios are further highlighted in <a href="#fig2">Fig. 1</a>A-F. These environments have
-        characteristics that the policy does not experience during training. The terrains can deform and crumble, with
-        significant variation of material properties over the surface. The robot's legs are subjected to frequent
-        disturbances due to vegetation, rubble, and sticky mud.
-        Existing terrain estimation pipelines that use cameras or LiDAR fail in environments
-        with
-        snow (<a href="#fig2">Fig. 1</a>A), water (<a href="#fig2">Fig. 1</a>C),
-        or dense vegetation (<a href="#fig2">Fig. 1</a>F).
-        Our controller does not rely on exteroception and is immune to such failure.
-        The controller learns omnidirectional locomotion based on a history of proprioceptive observations and
-        is robust in zero-shot deployment on terrains with characteristics that were never experienced during training.
-    </p>
-
-    <p class="paper-paragraph">
-        Our controller was used by the Cerberus team for the DARPA Subterranean Challenge Urban Circuit
-        (<a href="#fig2">Fig. 1</a>G).
-        It replaced a model-based controller that had been employed used by the team in the past.
-        The objective of the competition is to develop robotic systems that rapidly map, navigate,
-        and search complex underground environments, including tunnels, urban underground, and cave
-        networks. The human operators are not allowed to assist the robots during the competition physically;
-        only teleoperation is allowed. Accordingly, the locomotion controller needs to perform without failure
-        over extended mission durations.
-        The presented controller drove two ANYmal-B robots in four missions of 60 minutes. The
-        controller exhibited a zero failure rate throughout the competition. A steep staircase that was traversed
-        by one of the robots during the competition is shown in <a href="#fig2">Fig. 1</a>G.
-    </p>
-    
-    <hr class="thick">
-    
-    <div style=" padding-bottom: 1rem;">
-    <em><h3>Foot-trapping reflex</h3></em>
+      </div>
+      
     </div>
-
-    <figcaption>
-        Movie 1. Step experiment
-        <span style="font-size: 1rem; color:#595959">(paper Movie S3)</span>
-    </figcaption>
-    <div class="videoWrapper" id="movieS3">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tPixnjLbTvE" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-    </div>
-
-    <p class="paper-paragraph">
-        The learned controller manifests a foot-trapping reflex, as shown in <a href="#movieS3">Movie 1</a>.
-        The policy identifies the trapping of the foot purely from proprioceptive observations and lifts the foot over
-        the obstacle.
-        Such reflexes were not specified in any way during training: they developed adaptively.
-        This distinguishes the presented approach from conventional controller design methods,
-        which explicitly build in such reflexes and orchestrate their execution by a higher-level state machine.
-    </p>
-    
-    <hr class="thick">
-
-    <div style=" padding-bottom: 1rem;">
-    <em><h3>Robustness to Model-mismatch</h3></em>
-    </div>
-
-    <figcaption>
-        Movie 2. Payload experiment
-        <span style="font-size: 1rem; color:#595959">(paper Movie S4)</span>
-    </figcaption>
-    <div class="videoWrapper" id="movieS4">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/3Nr47MXCFO0" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-    </div>
-
-    <p class="paper-paragraph">
-        We tested the controllers in the presence of substantial model mismatch.
-        We attached a 10 kg payload.
-        This payload is 22.7 % of the total weight of the robot, and was never simulated during training.
-        As shown in <a href="#movieS4">Movie 2</a>, the presented controller can still traverse steps up to 13.4 cm
-        despite the model mismatch.
-        The baseline is incapable of traversing any steps under any command speed with the payload.
-    </p>
-
-    <hr class="thick">
-
-    <div style=" padding-bottom: 1rem;">
-    <em><h3>Robustness to Foot Slippage</h3></em>
-    </div>
-    <figcaption>
-        Movie 3. Foot Slippage experiment
-        <span style="font-size: 1rem; color:#595959">(paper Movie S5)</span>
-    </figcaption>
-    <figure class="videoWrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aMPwB3t4idU" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-    </figure>
-
-    <p class="paper-paragraph">
-        Next we test robustness to foot slippage.
-        To introduce slippage, we used a moistened whiteboard.
-        The results are shown in <a href="#movieS5">Movie 3</a>.
-        The baseline quickly loses balance, aggressively swings the legs, and falls. In contrast, the presented
-        controller adapts to the slippery terrain and successfully locomotes in the commanded direction.
-    </p>
-
+  </div>
 </div>
-<p>
+</li></ol>
 
-</p>
-<hr class="thick2">
-<div id="acknowlege">
-    <h2>Acknowledgment</h2>
-    <p class="paper-paragraph">
+			
+			
+			</ol>
+    </div>
+  </div>
 
-        <b>Author contributions</b>: J.L. formulated
-        the main idea of the training and control methods, implemented the controller, set up the
-        simulation, and trained control policies. J.L. performed the indoor experiments. J.H.
-        contributed in setting up the simulation. J.L. and L.W. performed outdoor experiments
-        together. J.L., J.H., L.W., M.H., and V.K. refined ideas, contributed in the experiment design,
-        and analyzed the data.
-    </p>
-    <p class="paper-paragraph">
-    <b>Funding</b>: The project was funded, in part, by the Intel
-        Network on Intelligent Systems, the Swiss National Science Foundation (SNF) through the
-        National Centre of Competence in Research Robotics, the European Research Council (ERC)
-        under the European Union’s Horizon 2020 research and innovation programme grant
-        agreement no 852044 and no 780883. The work has been conducted as part of ANYmal
-        Research, a community to advance legged robotics.
-        <!--        <b>Competing interests</b>: The authors declare that they have no competing-->
-        <!--        interests.  <b>Data and materials availability</b>: All data needed to evaluate the conclusions in the-->
-        <!--        paper are present in the paper or the Supplementary Materials. Other materials can be found at-->
-        <!--        https://github.com/leggedrobotics/learning_locomotion_over_challening_terrain_supplementary.-->
-    </p>
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2020</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA2020/www.icra2020.org/index.html" target="_blank">
+          ICRA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2020ICRA" class="col p-0">
+      <h5 class="title mb-0"> Learning Grasping Points for Garment Manipulation in Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          IEEE International Conference on Robotics and Automation (ICRA), 2020
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2020ICRA-abstract" role="button" aria-expanded="false" aria-controls="zhang2020ICRA-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/9196994" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=yVScTBbw7E4" target="_blank">Video</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=HFSLJSjnbi8" target="_blank">Talk</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2020ICRA-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Assistive robots have the potential to provide tremendous support for disabled and elderly people in their daily dressing activities. Recent studies on robot-assisted dressing usually simplify the setup of the initial robot configuration by manually attaching the garments on the robot end-effector and positioning them close to the user's arm. A fundamental challenge in automating such a process for robots is computing suitable grasping points on garments that facilitate robotic manipulation. In this paper, we address this problem by introducing a supervised deep neural network to locate a pre-defined grasping point on the garment, using depth images for their invariance to color and texture. To reduce the amount of real data required, which is costly to collect, we leverage the power of simulation to produce large amounts of labeled data. The network is jointly trained with synthetic datasets of depth images and a limited amount of real data. We introduce a robot-assisted dressing system that combines the grasping point prediction method, with a grasping and manipulation strategy which takes grasping orientation computation and robot-garment collision avoidance into account. The experimental results demonstrate that our method is capable of yielding accurate grasping point estimations. The proposed dressing system enables the Baxter robot to autonomously grasp a hospital gown hung on a rail, bring it close to the user and successfully dress the upper-body. 
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<!-- Footer -->
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2019</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.ieee-ras.org/publications/t-ro" target="_blank">
+          T-RO
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2019TRO" class="col p-0">
+      <h5 class="title mb-0">Probabilistic Real-Time User Posture Tracking for Personalized Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                  <nobr><a href="https://www.imperial.ac.uk/people/a.cully" target="_blank">Antoine Cully<nobr><em></em></nobr></a>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          IEEE Transactions on Robotics (T-RO)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2019TRO-abstract" role="button" aria-expanded="false" aria-controls="zhang2019TRO-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/8685136" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=9S8joEXxDCM" target="_blank">Video</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://tv.theiet.org/?eventvideoid=13345" target="_blank">Talk</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2019TRO-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+Robotic solutions to dressing assistance have the potential to provide tremendous support for elderly and disabled people. However, unexpected user movements may lead to dressing failures or even pose a risk to the user. Tracking such user movements with vision sensors is challenging due to severe visual occlusions created by the robot and clothes. We propose a probabilistic tracking method using Bayesian networks in latent spaces, which fuses robot end-effector positions and force information to enable camera-less and real-time estimation of the user postures during dressing. The latent spaces are created before dressing by modeling the user movements with a Gaussian Process Latent Variable Model, taking the user's movement limitations into account. We introduce a robot-assisted dressing system that combines our tracking method with hierarchical multi-task control to minimize the force between the user and the robot. The experimental results demonstrate the robustness and accuracy of our tracking method. The proposed method enables the Baxter robot to provide personalized dressing assistance in putting on a sleeveless jacket for users with (simulated) upper-body impairments.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+    </div>
+  </div>
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2018</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://journals.sagepub.com/home/pic" target="_blank">
+          JMES
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2018preoperative" class="col p-0">
+      <h5 class="title mb-0">Preoperative Optimization of the Surgical Robot Considering Internal Diversity of Workspace</h5>
+      <div class="author">
+                
+              
+                  <nobr>Zhiyuan Yan</a>,</nobr>
+                
+                  <nobr>Zhijiang Du</a>,</nobr>
+
+                  <nobr><em>Fan Zhang</em>,</nobr>
+            
+									and
+                
+                  <nobr>Weidong Wang</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2018preoperative-abstract" role="button" aria-expanded="false" aria-controls="zhang2018preoperative-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://journals.sagepub.com/doi/full/10.1177/0954406217699019" target="_blank">Paper</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2018preoperative-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Surgical robots have increased in popularity, and their performance is closely related to the robotic positioning before surgery. Many recent studies in preoperative planning have focused on the pose selection of the robot and the port placement. However, it is difficult to position the surgical robot simply based on experience. To solve this problem, the surgical workspace is subdivided into several subspaces with different weights. Global isotropy index and cooperation capability index are proposed to reflect the performance of the surgical robot and used as optimization functions. Particle swarm optimization is used to optimize the setup parameters. Based on different weight distributions, setup parameters can be automatically given and sent to the simulation system to display the setup and guide the robot positioning. The results show that the setup optimization considering the internal diversity of workspace is capable of satisfying the detailed requirements of robotic surgery and effectively guide the robotic surgery setup.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+			</ol>
+    </div>
+  </div>
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2017</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+			
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.iros2017.org/" target="_blank">
+          IROS
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2017iros" class="col p-0">
+      <h5 class="title mb-0">Personalized Robot-Assisted Dressing using User Modeling in Latent Spaces</h5>
+      <div class="author">
+
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                  <nobr><a href="https://www.imperial.ac.uk/people/a.cully" target="_blank">Antoine Cully<nobr><em></em></nobr></a>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2017 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2017iros-abstract" role="button" aria-expanded="false" aria-controls="zhang2017iros-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/8206206" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=FT5VKm3kgoM" target="_blank">Video</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2017iros-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+	Robots have the potential to provide tremendous support to disabled and elderly people in their everyday tasks, such as dressing. Many recent studies on robotic dressing assistance usually view dressing as a trajectory planning problem. However, the user movements during the dressing process are rarely taken into account, which often leads to the failures of the planned trajectory and may put the user at risk. The main difficulty of taking user movements into account is caused by severe occlusions created by the robot, the user, and the clothes during the dressing process, which prevent vision sensors from accurately detecting the postures of the user in real time. In this paper, we address this problem by introducing an approach that allows the robot to automatically adapt its motion according to the force applied on the robot's gripper caused by user movements. There are two main contributions introduced in this paper: 1) the use of a hierarchical multi-task control strategy to automatically adapt the robot motion and minimize the force applied between the user and the robot caused by user movements; 2) the online update of the dressing trajectory based on the user movement limitations modeled with the Gaussian Process Latent Variable Model in a latent space, and the density information extracted from such latent space. The combination of these two contributions leads to a personalized dressing assistance that can cope with unpredicted user movements during the dressing while constantly minimizing the force that the robot may apply on the user. The experimental results demonstrate that the proposed method allows the Baxter humanoid robot to provide personalized dressing assistance for human users with simulated upper-body impairments.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="http://www.icra2017.org/" target="_blank">
+          ICRA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2017icra" class="col p-0">
+      <h5 class="title mb-0">Preoperative Planning for the Multi-Arm Surgical Robot using PSO-GP-based Performance Optimization</h5>
+      <div class="author">
+                
+				                  <nobr><em>Fan Zhang</em>,</nobr>
+                
+                  <nobr>Zhiyuan Yan</a>,</nobr>
+            
+									and
+                
+                  <nobr>Zhijiang Du</a>.</nobr>
+              
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2017 IEEE International Conference on Robotics and Automation (ICRA)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2017icra-abstract" role="button" aria-expanded="false" aria-controls="zhang2017icra-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7989484" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="/assets/pdf/interactive.pdf" target="_blank">Poster</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2017icra-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            For the robotically-assisted minimally invasive surgery, preoperative planning is essential towards assisting surgeons to prepare the intervention and to decide the best access to the surgical site. Many recent studies in preoperative planning have focused on the pose selection of the robot and the port placement. However, as such techniques cannot evaluate the performance of the multi-arm cooperation, their applications are constrained in real practise with multi-arm surgical robots. In this paper, the surgical workspace is divided and the subspaces are assigned with different weights to reflect the internal differences within the surgical workspace. We propose three metrics to evaluate the performance of the multi-arm surgical robot: Global Isotropy Index (GII) to measure the dexterity of one single robot arm; Cooperation Capability Index (CCI) to reflect the performance of the multi-arm cooperation; Minimum Distance Index (MDI) to describe the collision avoidance of the robotic arms. We also propose a combination of Particle Swarm Optimization (PSO) and Gaussian Process (GP) to locate the port placement and robot positioning. The proposed integrated PSO-GP-based optimization strategy is implemented on a three-arm surgical robot. Two sets of experiments are carried out to validate our method. The results demonstrate that the performance optimization strategy based on PSO-GP is capable of guiding surgeons to plan an intervention with the multi-arm surgical robot.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2016</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="http://2016.ieee-icma.org/" target="_blank">
+          ICMA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2016icma" class="col p-0">
+      <h5 class="title mb-0">Preoperative Setup Planning for Robotic Surgery based on a Simulation Platform and Gaussian Process</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+
+<nobr>Zhiyuan Yan</a>,</nobr>
+                
+              
+									and
+                
+                 <nobr>Zhijiang Du</a>,</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2016 IEEE International Conference on Mechatronics and Automation (ICMA)
+          <br>
+        <nobr><em style="color:orange;">Best Student Paper Award</em></nobr>
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2016icma-abstract" role="button" aria-expanded="false" aria-controls="zhang2016icma-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7558682" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=mS5WNINKPIk" target="_blank">Video</a>
+
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2016icma-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+For the robotically-assisted minimally invasive surgery, preoperative planning is essential towards assisting surgeons to prepare the intervention and to decide the best access to the surgical site. Many recent studies in preoperative planning cannot evaluate the performance of the multi-arm cooperation, and thus their applications are constrained in real practise with multi-arm surgical robots. In this paper, we establish a simulation platform of a three-arm surgical robot. We propose to use two objective functions, Global Isotropy Index (GII) and Cooperation Capability Index (CCI), to reflect the dexterity of a robot arm and the performance of the multi-arm cooperation respectively. We also propose to use Gaussian Process Regression (GPR) to locate the optimal port placement and robot positioning. Simulation experiments are carried out to validate our method. The results demonstrate that our proposed performance optimization strategy based on GP is capable to guide surgeons to plan an intervention with the multi-arm surgical robot.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2015</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://iros2015.informatik.uni-hamburg.de/" target="_blank">
+          IROS
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2015iros" class="col p-0">
+      <h5 class="title mb-0">An Under-Actuated Manipulation Controller based on Workspace Analysis and Gaussian Processes</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                                    <nobr>Yanyu Su</a>,</nobr>
+                
+                  <nobr>Xiang Zhang</a>,</nobr>
+<nobr>Wei Dong</a>,</nobr>
+                
+              
+									and
+                
+                 <nobr>Zhijiang Du</a>,</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2015iros-abstract" role="button" aria-expanded="false" aria-controls="zhang2015iros-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7354176" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=yMQN93P9HJU" target="_blank">Video</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2015iros-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+The kinematic modelling has been applied to many controllers of under-actuated manipulators. Most of these studies assume that the control process is conducted within the workspace. However, as such a kinematic model cannot describe the situations when the stable grasping is violated in the real environment, these controllers may fail unexpectedly. In this paper, we propose a combination of kinematics based Workspace Analysis (WA) and Gaussian Process Classification (GPC) to model the success rates of control actions in the theoretical workspace. We also use the Gaussian Process Regression (GPR) to model the residual between the prediction of the WA and the ground truth data. We then apply this integrated model, Gaussian Processes enhanced Workspace Analysis (GP-WA), into an optimal controller. The optimal controller is implemented on a planar under-actuated gripper with two three-phalanx fingers. Two sets of simulation experiments are carried out to validate our method. The results demonstrate that the optimal manipulation controller based on GP-WA achieves high control accuracy for manipulating a wide range of objects.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+
+    </ol>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <!-- Footer -->
   <!--<footer>
     &copy; Copyright 2020 Fan Zhang. -->
     
