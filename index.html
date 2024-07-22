@@ -44,10 +44,9 @@
             preBuffer[i].src = theImages[i]
         }
         var whichImage = Math.floor(Math.random() * (p));
-
-        function showImage() {
-            document.write('<img class="profile-img img-responsive" src="' + theImages[whichImage] + '" align="middle" height="230">');
-//document.write('<p><font color="gray" size="1">Photo credit: '+theCredits[whichImage]+'</font></p>');
+        function showImage(){
+        document.write('<img class="profile-img img-responsive" src="'+theImages[whichImage]+'">');
+        document.write('<p><font color="gray" size="1">Photo credit: '+theCredits[whichImage]+'</font></p>');
         }
 
         //  End -->
