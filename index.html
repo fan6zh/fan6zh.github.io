@@ -57,7 +57,7 @@ document.write('<img class="profile-img img-responsive" src="'+theImages[whichIm
       
         <div class="row ml-1 ml-sm-0">
           <span class="contact-icon text-center" style="line-height: 1em;">
-            <a href="mailto:f.zhang16@imperial.ac.uk"><i class="fa fa-envelope-square gm-icon"></i></a>
+            <a href="mailto:fan.zhang@honda-ri.de"><i class="fa fa-envelope-square gm-icon"></i></a>
             <a href="https://scholar.google.co.uk/citations?hl=en&user=X-OiekwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square gs-icon"></i></a>
             <a href="https://www.linkedin.com/in/fan-zhang-3a2b1071/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
             <a href="https://www.researchgate.net/profile/Fan-Zhang-27" target="_blank" title="ResearchGate"><i class="fab fa-researchgate rg-icon"></i></a>
@@ -133,7 +133,7 @@ document.write('<img class="profile-img img-responsive" src="'+theImages[whichIm
 			<h1 class="pb-3 title text-left font-weight-bold">Dr Fan Zhang</h1>
 			<h6 class="m-0 mb-2" style="font-size: 0.83em;"><a href="https://www.honda-ri.de/" class="page-description" target="_blank">Honda Research Institute EU</a></h6>  
                         <h6 class="m-0 mb-2" style="font-size: 0.83em;"><a href="https://maps.app.goo.gl/fEhkJTZWM3YWzsub8" class="page-description" target="_blank">Carl-Legien-Straße 30</a></h6>
-                                                <h6 class="m-0 mb-2" style="font-size: 0.83em;"><a href="https://maps.app.goo.gl/fEhkJTZWM3YWzsub8" class="page-description" target="_blank">63073 Offenbach am Main, Germany</a></h6>
+                                                <h6 class="m-0 mb-2" style="font-size: 0.83em;"><a href="https://maps.app.goo.gl/fEhkJTZWM3YWzsub8" class="page-description" target="_blank">Frankfurt, Germany</a></h6>
   
 		<div style="position: absolute; float: right; right:5px; top:95px">
          <img src="assets/img/IC_logo.png" align="middle" width="360" height="58" />     
@@ -157,7 +157,7 @@ I am a guest scientist at&nbsp;<a href="https://www.honda-ri.de/institute/" targ
        </p>
 
        <p>
-My research interests cover many aspects of machine learning algorithms applied to general robot manipulation for human-robot interaction. I have been awarded&nbsp;<a href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html" target="_blank">The Queen Mary UK Best PhD in Robotics Award 2020 1st place</a>! My research has been accepted at&nbsp;<a href="https://www.science.org/doi/10.1126/scirobotics.abm6010" target="_blank">Science Robotics</a> and reported by&nbsp;<a href="https://www.bloomberg.com/news/articles/2019-08-22/nurse-named-baxter-that-helps-you-dress-could-aid-staff-shortage" target="_blank">Bloomberg</a>,&nbsp;<a href="https://www.thetimes.co.uk/article/baxter-the-nursebot-to-help-care-for-ageing-population-9nj57xqvl" target="_blank">The Times</a>. More information about robot-assisted dressing can be found&nbsp;<a href="https://fan6zh.github.io/projects/DRESS/" target="_blank">here</a>.
+My research interests cover many aspects of machine learning algorithms applied to assistive robot manipulation. I have been awarded&nbsp;<a href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html" target="_blank">The Queen Mary UK Best PhD in Robotics Award 2020 1st place</a>! My research has been accepted at&nbsp;<a href="https://www.science.org/doi/10.1126/scirobotics.abm6010" target="_blank">Science Robotics</a> and reported by&nbsp;<a href="https://www.bloomberg.com/news/articles/2019-08-22/nurse-named-baxter-that-helps-you-dress-could-aid-staff-shortage" target="_blank">Bloomberg</a>,&nbsp;<a href="https://www.thetimes.co.uk/article/baxter-the-nursebot-to-help-care-for-ageing-population-9nj57xqvl" target="_blank">The Times</a>. More information about robot-assisted dressing can be found&nbsp;<a href="https://fan6zh.github.io/projects/DRESS/" target="_blank">here</a>.
        </p>
                
     </div>
@@ -527,6 +527,65 @@ My research interests cover many aspects of machine learning algorithms applied 
     };
     $("#projects").shuffleChildren();
   </script> -->
+  
+        // Bind filter button click.
+      $('#filters').on( 'click', 'button', function() {
+        var filterValue = $( this ).attr('data-filter');
+        localStorage.setItem('filterValue', filterValue);
+        $grid.isotope({ filter: filterValue });
+      });
+
+      // Change is-checked class on buttons.
+      $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+
+      function update_isotope() {
+        // Retrieve cached button click.
+        var defaultFilterValue = localStorage.getItem('filterValue');
+        if (defaultFilterValue == null) {
+          defaultFilterValue = ".highlight"
+        }
+        $grid.isotope({ filter: defaultFilterValue });
+        var buttons = document.getElementsByClassName("button");
+        for (var currButton of buttons) {
+          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+            currButton.classList.add('is-checked');
+          } else {
+            currButton.classList.remove('is-checked');
+          }
+        }
+      }
+
+      function toggle_bio() {
+        var x = document.getElementById("more-bio");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function toggle_highlights() {
+        var x = document.getElementById("main-highlights");
+        var y = document.getElementById("more-highlights");
+        var b = document.getElementById("toggle_highlights_button")
+        if (y.style.display === "none") {
+          x.style.display = "none";
+          y.style.display = "block";
+          b.innerHTML = "Show less"
+          update_isotope();
+        } else {
+          x.style.display = "block";
+          y.style.display = "none";
+          b.innerHTML = "Show more"
+          update_isotope();
+        }
+      }
 
   <!-- Project Cards Layout -->
   <script type="text/javascript">
