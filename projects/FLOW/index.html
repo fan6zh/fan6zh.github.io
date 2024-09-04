@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Dr Fan Zhang | Robot-Assisted Dressing</title>
+  <title>Dr Fan Zhang | Flow Matching Policy</title>
   <meta name="description" content="My personal website.
 ">
 
@@ -105,17 +105,17 @@
   <ol class="breadcrumb p-0 text-lowercase">
     <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
-    <li class="breadcrumb-item less">Robot-Assisted Dressing</li>
+    <li class="breadcrumb-item less">Flow Matching Policy</li>
   </ol>
 </nav>
 
 <div class="row m-0" style="width: 100%;">
   <div class="col-sm-12 p-0">
-    <h1>Robot-Assisted Dressing</h1>
-    <h5 class="mb-4">for bedridden patients</h5>
+    <h1>Flow Matching Policy</h1>
+    <h5 class="mb-4">for robot manipulation</h5>
   </div>
-	<div><p style="width:100%;"><img src="../../assets/img/pipeline.png"  height="440" width="800" class="post_thumb" ></p>
-		<p align="justify">Summary: Assistive robots have the potential to support people with disabilities in a variety of activities of daily living such as dressing. People who have completely lost their upper limb movement functionality may benefit from robot-assisted dressing, which involves complex deformable garment manipulation. Here we report a dressing pipeline intended for these people, and experimentally validate it on a medical training manikin. The pipeline is comprised of the robot grasping a hospital gown hung on a rail, fully unfolding the gown, navigating around a bed, and lifting up the user’s arms in sequence to finally dress the user. To automate this pipeline, we address two fundamental challenges: first, learning manipulation policies to bring the garment from an uncertain state into a configuration that facilitates robust dressing; second, transferring the deformable object manipulation policies learned in simulation to real world to leverage cost-effective data generation. We tackle the first challenge by proposing an active pre-grasp manipulation approach that learns to isolate the garment grasping area prior to grasping. The approach combines prehensile and non-prehensile actions, and thus alleviates grasping-only behavioral uncertainties. For the second challenge, we bridge the sim-to-real gap of deformable object policy transfer by approximating the simulator to real-world garment physics. A contrastive neural network is introduced to compare pairs of real and simulated garment observations, measure their physical similarity and account for simulator parameters inaccuracies. The proposed method enables a dual-arm robot to put back-opening hospital gowns onto a medical manikin with a success rate of over 90%. <p>
+	<div><p style="width:100%;"><img src="../../assets/img/overall.png"  height="440" width="800" class="post_thumb" ></p>
+		<p align="justify">Summary: We present a framework for assistive robot manipulation, which focuses on two fundamental challenges: first, efficiently adapting large-scale models to downstream scene affordance understanding tasks, especially in daily living scenarios where gathering multi-task data involving humans requires strenuous effort; second, effectively learning robot trajectories by grounding the visual affordance model. We tackle the first challenge by employing a parameter-efficient prompt tuning method that prepends learnable text prompts to the frozen vision model to predict manipulation affordances in multi-task scenarios. Then we propose to learn robot trajectories guided by affordances in a supervised Flow Matching method. Flow matching represents a robot visuomotor policy as a conditional process of flowing random waypoints to desired robot trajectories. Finally, we introduce a real-world dataset with 10 tasks across Activities of Daily Living to test our framework. Our extensive evaluation highlights that the proposed prompt tuning method for learning manipulation affordance with language prompter achieves competitive performance and even outperforms other finetuning protocols across data scales, while satisfying parameter efficiency. Learning multi-task robot trajectories with a single flow matching policy also leads to consistently better performance than alternative behavior cloning methods, especially given multimodal robot action distributions. Our framework seamlessly unifies affordance model learning and trajectory generation with flow matching for robot manipulation. <p>
 </div>
 
 <div class="row m-0 text text-justify" style="width:100%;">
