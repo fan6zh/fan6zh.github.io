@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Dr Fan Zhang | Publications</title>
+  <meta name="description" content="A beautiful Jekyll theme for academics">
+
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/academicons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/publications/">
+</head>
+<body>
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Dr Fan Zhang</a>
+      
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+              <li class="nav-item ">
+                  <a class="nav-link" href="/assets/pdf/vitae.pdf">
+                    Curriculum Vitae
+                    
+                  </a>
+              </li>
+            
+              <li class="nav-item ">
+                  <a class="nav-link" href="/projects/">
+                    Projects
+                    
+                  </a>
+              </li>
+            
+              <li class="nav-item navbar-active font-weight-bold">
+                  <a class="nav-link" href="/publications/">
+                    Publications
+                    
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+              </li>
+            
+               <!--  <li class="nav-item ">
+                    <a class="nav-link" href="/travel/">
+                        Travel
+
+                    </a>
+                </li> -->
+
+
+              <li class="nav-item ">
+                  <a class="nav-link" href="/sr/">
+                    Science Robotics
+                    
+                  </a>
+              </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrolling Progress Bar -->
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+
+  <!-- Content -->
+  <div class="content">
+    
+  <h1>Selected Publications</h1>
+
+
+<p><br /></p>
+
+
+
+
+<!-- Fonts and Icons -->
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2024</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://arxiv.org/abs/2409.01083" target="_blank">
+          arxiv
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="fan2024arxiv" class="col p-0">
+      <h5 class="title mb-0"> Affordance-based Robot Manipulation with Flow Matching</h5>
+      <div class="author">
+                
+													
+              
+              	<nobr><em>Fan Zhang</em>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.honda-ri.de/" target="_blank">Michael Gienger</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+        <nobr>arXiv</nobr>, 2024
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#fan2024arxiv-abstract" role="button" aria-expanded="false" aria-controls="fan2024arxiv-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://arxiv.org/abs/2409.01083" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://hri-eu.github.io/flow-matching-policy/" target="_blank">Website</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="fan2024arxiv-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            We present a framework for assistive robot manipulation, which focuses on two fundamental challenges: first, efficiently adapting large-scale models to downstream scene affordance understanding tasks, especially in daily living scenarios where gathering multi-task data involving humans requires strenuous effort; second, effectively learning robot action trajectories by grounding the visual affordance model. We tackle the first challenge by employing a parameter-efficient prompt tuning method that prepends learnable text prompts to the frozen vision model to predict manipulation affordances in multi-task scenarios. Then we propose to learn robot action trajectories guided by affordances in a supervised flow matching method. Flow matching represents a robot visuomotor policy as a conditional process of flowing random waypoints to desired robot action trajectories. Finally, we introduce a real-world dataset with 10 tasks across Activities of Daily Living to test our framework. Our extensive evaluation highlights that the proposed prompt tuning method for learning manipulation affordance achieves competitive performance and even outperforms some other finetuning protocols across data scales, while satisfying parameter efficiency. Learning multi-task robot action trajectories with flow matching leads to consistently favorable results in several robot manipulation benchmarks than some alternative behavior cloning methods. This includes more stable training and evaluation, and noticeably faster inference, while maintaining comparable generalization performance to diffusion policy, where flow matching performs marginally better in most cases. Our framework seamlessly unifies affordance learning and action generation with flow matching for robot manipulation.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+</ol>						
+</ol>
+</div>
+</div>
+
+
+
+
+
+<!-- Fonts and Icons -->
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2023</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.ieee-ras.org/publications/ra-l" target="_blank">
+          RA-L
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="fan2023RAL" class="col p-0">
+      <h5 class="title mb-0"> Visual-Tactile Learning of Garment Unfolding for Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+													
+              
+              	<nobr><em>Fan Zhang</em>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+        <nobr>IEEE Robotics and Automation Letters (RA-L)</nobr>, 2023
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#fan2023RAL-abstract" role="button" aria-expanded="false" aria-controls="fan2023RAL-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/document/10185075" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://youtu.be/V-HCLkB17SY" target="_blank">Video</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="fan2023RAL-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Assistive robots have the potential to support disabled and elderly people in daily dressing activities. An intermediate stage of dressing is to manipulate the garment from a crumpled initial state to an unfolded configuration that facilitates robust dressing. Applying quasi-static grasping actions with vision feedback on garment unfolding usually suffers from occluded grasping points. In this work, we propose a dynamic manipulation strategy: tracing the garment edge until the hidden corner is revealed. We introduce a model-based approach, where a deep visual-tactile predictive model iteratively learns to perform servoing from raw sensor data. The predictive model is formalized as Conditional Variational Autoencoder with contrastive optimization, which jointly learns underlying visual-tactile latent representations, a latent garment dynamics model, and future predictions of garment states. Two cost functions are explored: the visual cost defined by garment corner positions guarantees the gripper to move towards the corner, while the tactile cost defined by garment edge poses prevents the garment from falling from the gripper. The experimental results demonstrate the improvement of our contrastive visual-tactile model predictive control over single sensing modality and baseline model learning techniques. The proposed method enables a robot to unfold back-opening hospital gowns and perform upper-body dressing.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+
+
+<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://2023.ieeeicassp.org/" target="_blank">
+          ICASSP
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="yun2023IC" class="col p-0">
+      <h5 class="title mb-0"> Contrastive Self-Supervised Learning for Automated Multi-Modal Dance Performance Assessment</h5>
+      <div class="author">
+                
+															<nobr>Yun Zhong,</nobr>
+              
+              	<nobr><em>Fan Zhang</em>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+        <nobr>ICASSP</nobr>, 2023
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#yun2023IC-abstract" role="button" aria-expanded="false" aria-controls="yun2023IC-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/10096824" target="_blank">Paper</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="yun2023IC-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            A fundamental challenge of analyzing human motion is to effectively represent human movements both spatially and temporally. We propose a contrastive self-supervised strategy to tackle this challenge. Particularly, we focus on dancing, which involves a high level of physical and intellectual abilities. Firstly, we deploy Graph and Residual Neural Networks with Siamese architecture to represent the dance motion and music features respectively. Secondly, we apply the InfoNCE loss to contrastively embed the high-dimensional multimedia signals onto the latent space without label supervision. Finally, our proposed framework is evaluated on a multi-modal Dance- Music-Level dataset composed of various dance motions, music, genres and choreographies with dancers of different expertise levels. Experimental results demonstrate the robustness and improvements of our proposed method over 3 baselines and 6 ablation studies across tasks of dance genres, choreographies classification and dancer expertise level assessment. 
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+</ol>						
+</ol>
+</div>
+</div>
+<!-- Fonts and Icons -->
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2022</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.science.org/journal/scirobotics" target="_blank">
+          SR
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2022SR" class="col p-0">
+      <h5 class="title mb-0"> Learning Garment Manipulation Policies towards Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+        <nobr><em style="color:orange;">Science Robotics</em></nobr>, 2022
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2022SR-abstract" role="button" aria-expanded="false" aria-controls="zhang2022SR-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.science.org/doi/10.1126/scirobotics.abm6010" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=6o5O4aslhDs" target="_blank">Video</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2022SR-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Assistive robots have the potential to support people with disabilities in a variety of activities of daily living such as dressing. People who have completely lost their upper limb movement functionality may benefit from robot-assisted dressing, which involves complex deformable garment manipulation. Here we report a dressing pipeline intended for these people, and experimentally validate it on a medical training manikin. The pipeline is comprised of the robot grasping a hospital gown hung on a rail, fully unfolding the gown, navigating around a bed, and lifting up the user’s arms in sequence to finally dress the user. To automate this pipeline, we address two fundamental challenges: first, learning manipulation policies to bring the garment from an uncertain state into a configuration that facilitates robust dressing; second, transferring the deformable object manipulation policies learned in simulation to real world to leverage cost-effective data generation. We tackle the first challenge by proposing an active pre-grasp manipulation approach that learns to isolate the garment grasping area prior to grasping. The approach combines prehensile and non-prehensile actions, and thus alleviates grasping-only behavioral uncertainties. For the second challenge, we bridge the sim-to-real gap of deformable object policy transfer by approximating the simulator to real-world garment physics. A contrastive neural network is introduced to compare pairs of real and simulated garment observations, measure their physical similarity and account for simulator parameters inaccuracies. The proposed method enables a dual-arm robot to put back-opening hospital gowns onto a medical manikin with a success rate of over 90%.  
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+
+
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2020</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA2020/www.icra2020.org/index.html" target="_blank">
+          ICRA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2020ICRA" class="col p-0">
+      <h5 class="title mb-0"> Learning Grasping Points for Garment Manipulation in Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          IEEE International Conference on Robotics and Automation (ICRA), 2020
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2020ICRA-abstract" role="button" aria-expanded="false" aria-controls="zhang2020ICRA-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/9196994" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=yVScTBbw7E4" target="_blank">Video</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=HFSLJSjnbi8" target="_blank">Talk</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2020ICRA-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            Assistive robots have the potential to provide tremendous support for disabled and elderly people in their daily dressing activities. Recent studies on robot-assisted dressing usually simplify the setup of the initial robot configuration by manually attaching the garments on the robot end-effector and positioning them close to the user's arm. A fundamental challenge in automating such a process for robots is computing suitable grasping points on garments that facilitate robotic manipulation. In this paper, we address this problem by introducing a supervised deep neural network to locate a pre-defined grasping point on the garment, using depth images for their invariance to color and texture. To reduce the amount of real data required, which is costly to collect, we leverage the power of simulation to produce large amounts of labeled data. The network is jointly trained with synthetic datasets of depth images and a limited amount of real data. We introduce a robot-assisted dressing system that combines the grasping point prediction method, with a grasping and manipulation strategy which takes grasping orientation computation and robot-garment collision avoidance into account. The experimental results demonstrate that our method is capable of yielding accurate grasping point estimations. The proposed dressing system enables the Baxter robot to autonomously grasp a hospital gown hung on a rail, bring it close to the user and successfully dress the upper-body. 
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2019</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.ieee-ras.org/publications/t-ro" target="_blank">
+          T-RO
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2019TRO" class="col p-0">
+      <h5 class="title mb-0">Probabilistic Real-Time User Posture Tracking for Personalized Robot-Assisted Dressing</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                  <nobr><a href="https://www.imperial.ac.uk/people/a.cully" target="_blank">Antoine Cully<nobr><em></em></nobr></a>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          IEEE Transactions on Robotics (T-RO)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2019TRO-abstract" role="button" aria-expanded="false" aria-controls="zhang2019TRO-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/8685136" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=9S8joEXxDCM" target="_blank">Video</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://tv.theiet.org/?eventvideoid=13345" target="_blank">Talk</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2019TRO-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+Robotic solutions to dressing assistance have the potential to provide tremendous support for elderly and disabled people. However, unexpected user movements may lead to dressing failures or even pose a risk to the user. Tracking such user movements with vision sensors is challenging due to severe visual occlusions created by the robot and clothes. We propose a probabilistic tracking method using Bayesian networks in latent spaces, which fuses robot end-effector positions and force information to enable camera-less and real-time estimation of the user postures during dressing. The latent spaces are created before dressing by modeling the user movements with a Gaussian Process Latent Variable Model, taking the user's movement limitations into account. We introduce a robot-assisted dressing system that combines our tracking method with hierarchical multi-task control to minimize the force between the user and the robot. The experimental results demonstrate the robustness and accuracy of our tracking method. The proposed method enables the Baxter robot to provide personalized dressing assistance in putting on a sleeveless jacket for users with (simulated) upper-body impairments.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+    </div>
+  </div>
+
+
+
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2017</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+			
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://www.iros2017.org/" target="_blank">
+          IROS
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2017iros" class="col p-0">
+      <h5 class="title mb-0">Personalized Robot-Assisted Dressing using User Modeling in Latent Spaces</h5>
+      <div class="author">
+
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                  <nobr><a href="https://www.imperial.ac.uk/people/a.cully" target="_blank">Antoine Cully<nobr><em></em></nobr></a>,</nobr>
+                
+              
+									and
+                
+                  <nobr><a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>.</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2017 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2017iros-abstract" role="button" aria-expanded="false" aria-controls="zhang2017iros-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/8206206" target="_blank">Paper</a>
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=FT5VKm3kgoM" target="_blank">Video</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2017iros-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+	Robots have the potential to provide tremendous support to disabled and elderly people in their everyday tasks, such as dressing. Many recent studies on robotic dressing assistance usually view dressing as a trajectory planning problem. However, the user movements during the dressing process are rarely taken into account, which often leads to the failures of the planned trajectory and may put the user at risk. The main difficulty of taking user movements into account is caused by severe occlusions created by the robot, the user, and the clothes during the dressing process, which prevent vision sensors from accurately detecting the postures of the user in real time. In this paper, we address this problem by introducing an approach that allows the robot to automatically adapt its motion according to the force applied on the robot's gripper caused by user movements. There are two main contributions introduced in this paper: 1) the use of a hierarchical multi-task control strategy to automatically adapt the robot motion and minimize the force applied between the user and the robot caused by user movements; 2) the online update of the dressing trajectory based on the user movement limitations modeled with the Gaussian Process Latent Variable Model in a latent space, and the density information extracted from such latent space. The combination of these two contributions leads to a personalized dressing assistance that can cope with unpredicted user movements during the dressing while constantly minimizing the force that the robot may apply on the user. The experimental results demonstrate that the proposed method allows the Baxter humanoid robot to provide personalized dressing assistance for human users with simulated upper-body impairments.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+
+
+<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="http://www.icra2017.org/" target="_blank">
+          ICRA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2017icra" class="col p-0">
+      <h5 class="title mb-0">Preoperative Planning for the Multi-Arm Surgical Robot using PSO-GP-based Performance Optimization</h5>
+      <div class="author">
+                
+				                  <nobr><em>Fan Zhang</em>,</nobr>
+                
+                  <nobr>Zhiyuan Yan</a>,</nobr>
+            
+									and
+                
+                  <nobr>Zhijiang Du</a>.</nobr>
+              
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2017 IEEE International Conference on Robotics and Automation (ICRA)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2017icra-abstract" role="button" aria-expanded="false" aria-controls="zhang2017icra-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7989484" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="/assets/pdf/interactive.pdf" target="_blank">Poster</a>
+        
+      </div>
+    
+      
+      <div class="col mt-2 p-0">
+        <div id="zhang2017icra-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+            For the robotically-assisted minimally invasive surgery, preoperative planning is essential towards assisting surgeons to prepare the intervention and to decide the best access to the surgical site. Many recent studies in preoperative planning have focused on the pose selection of the robot and the port placement. However, as such techniques cannot evaluate the performance of the multi-arm cooperation, their applications are constrained in real practise with multi-arm surgical robots. In this paper, the surgical workspace is divided and the subspaces are assigned with different weights to reflect the internal differences within the surgical workspace. We propose three metrics to evaluate the performance of the multi-arm surgical robot: Global Isotropy Index (GII) to measure the dexterity of one single robot arm; Cooperation Capability Index (CCI) to reflect the performance of the multi-arm cooperation; Minimum Distance Index (MDI) to describe the collision avoidance of the robotic arms. We also propose a combination of Particle Swarm Optimization (PSO) and Gaussian Process (GP) to locate the port placement and robot positioning. The proposed integrated PSO-GP-based optimization strategy is implemented on a three-arm surgical robot. Two sets of experiments are carried out to validate our method. The results demonstrate that the performance optimization strategy based on PSO-GP is capable of guiding surgeons to plan an intervention with the multi-arm surgical robot.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2016</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="http://2016.ieee-icma.org/" target="_blank">
+          ICMA
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2016icma" class="col p-0">
+      <h5 class="title mb-0">Preoperative Setup Planning for Robotic Surgery based on a Simulation Platform and Gaussian Process</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+
+<nobr>Zhiyuan Yan</a>,</nobr>
+                
+              
+									and
+                
+                 <nobr>Zhijiang Du</a>,</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2016 IEEE International Conference on Mechatronics and Automation (ICMA)
+          <br>
+        <nobr><em style="color:orange;">Best Student Paper Award</em></nobr>
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2016icma-abstract" role="button" aria-expanded="false" aria-controls="zhang2016icma-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7558682" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=mS5WNINKPIk" target="_blank">Video</a>
+
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2016icma-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+For the robotically-assisted minimally invasive surgery, preoperative planning is essential towards assisting surgeons to prepare the intervention and to decide the best access to the surgical site. Many recent studies in preoperative planning cannot evaluate the performance of the multi-arm cooperation, and thus their applications are constrained in real practise with multi-arm surgical robots. In this paper, we establish a simulation platform of a three-arm surgical robot. We propose to use two objective functions, Global Isotropy Index (GII) and Cooperation Capability Index (CCI), to reflect the dexterity of a robot arm and the performance of the multi-arm cooperation respectively. We also propose to use Gaussian Process Regression (GPR) to locate the optimal port placement and robot positioning. Simulation experiments are carried out to validate our method. The results demonstrate that our proposed performance optimization strategy based on GP is capable to guide surgeons to plan an intervention with the multi-arm surgical robot.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li></ol>
+
+			
+			
+			</ol>
+    </div>
+  </div>
+
+
+
+<div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+    <div class="col-sm-1 mt-2 p-0 pr-1">
+      <h3 class="bibliography-year">2015</h3>
+    </div>
+    <div class="col-sm-11 p-0">
+      <ol class="bibliography">
+
+		<li><div class="row m-0 mt-3 p-0">
+			 <div class="col-sm-1 p-0 abbr">
+        <a class="badge font-weight-bold light-blue darken-1 align-middle" style="width: 65px;" href="https://iros2015.informatik.uni-hamburg.de/" target="_blank">
+          IROS
+        </a>
+			</div>
+  <div class="col-sm-11 mt-2 mt-sm-0 p-0 pl-xs-0 pl-sm-4 pr-xs-0 pr-sm-2">
+    
+    <div id="zhang2015iros" class="col p-0">
+      <h5 class="title mb-0">An Under-Actuated Manipulation Controller based on Workspace Analysis and Gaussian Processes</h5>
+      <div class="author">
+                
+									<nobr><em>Fan Zhang</em>,</nobr>
+              
+                                    <nobr>Yanyu Su</a>,</nobr>
+                
+                  <nobr>Xiang Zhang</a>,</nobr>
+<nobr>Wei Dong</a>,</nobr>
+                
+              
+									and
+                
+                 <nobr>Zhijiang Du</a>,</nobr>
+        
+      </div>
+
+      <div>
+        <p class="periodical font-italic">
+          2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+        </p>
+      </div>
+    
+      <div class="col p-0">
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" data-toggle="collapse" href="#zhang2015iros-abstract" role="button" aria-expanded="false" aria-controls="zhang2015iros-abstract">Abstract</a>
+        
+          <a class="badge grey waves-effect font-weight-light mr-1" href="https://ieeexplore.ieee.org/abstract/document/7354176" target="_blank">Paper</a>
+<a class="badge grey waves-effect font-weight-light mr-1" href="https://www.youtube.com/watch?v=yMQN93P9HJU" target="_blank">Video</a>
+        
+      </div>
+    
+      <div class="col mt-2 p-0">
+        <div id="zhang2015iros-abstract" class="collapse">
+          <div class="abstract card card-body font-weight-light mr-0 mr-sm-3 p-3">
+The kinematic modelling has been applied to many controllers of under-actuated manipulators. Most of these studies assume that the control process is conducted within the workspace. However, as such a kinematic model cannot describe the situations when the stable grasping is violated in the real environment, these controllers may fail unexpectedly. In this paper, we propose a combination of kinematics based Workspace Analysis (WA) and Gaussian Process Classification (GPC) to model the success rates of control actions in the theoretical workspace. We also use the Gaussian Process Regression (GPR) to model the residual between the prediction of the WA and the ground truth data. We then apply this integrated model, Gaussian Processes enhanced Workspace Analysis (GP-WA), into an optimal controller. The optimal controller is implemented on a planar under-actuated gripper with two three-phalanx fingers. Two sets of simulation experiments are carried out to validate our method. The results demonstrate that the optimal manipulation controller based on GP-WA achieves high control accuracy for manipulating a wide range of objects.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</li>
+
+
+    </ol>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <!-- Footer -->
+  <!--<footer>
+    &copy; Copyright 2020 Fan Zhang. -->
+    
+    
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="/assets/js/common.js"></script>
+
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      var progressBar = $('#progress');
+      progressBar.css({ 'top': navbarHeight });
+      var getMax = function() { return $(document).height() - $(window).height(); }
+      var getValue = function() { return $(window).scrollTop(); }   
+      // Check if the browser supports the progress element.
+      if ('max' in document.createElement('progress')) {
+        // Set the 'max' attribute for the first time.
+        progressBar.attr({ max: getMax() });
+        progressBar.attr({ value: getValue() });
+    
+        $(document).on('scroll', function() {
+          // On scroll only the 'value' attribute needs to be calculated.
+          progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function() {
+          var navbarHeight = $('#navbar').outerHeight(true);
+          $('body').css({ 'padding-top': navbarHeight });
+          $('progress-container').css({ 'padding-top': navbarHeight });
+          progressBar.css({ 'top': navbarHeight });
+          // On resize, both the 'max' and 'value' attributes need to be calculated.
+          progressBar.attr({ max: getMax(), value: getValue() });
+        });
+      } else {
+        var max = getMax(), value, width;
+        var getWidth = function() {
+          // Calculate the window width as a percentage.
+          value = getValue();
+          width = (value/max) * 100;
+          width = width + '%';
+          return width;
+        }
+        var setWidth = function() { progressBar.css({ width: getWidth() }); };
+        setWidth();
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function() {
+          // Need to reset the 'max' attribute.
+          max = getMax();
+          setWidth();
+        });
+      }
+    });
+  </script>
+
+  <!-- Code Syntax Highlighting -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Script Used for Randomizing the Projects Order -->
+  <!-- <script type="text/javascript">
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+    $("#projects").shuffleChildren();
+  </script> -->
+
+  <!-- Project Cards Layout -->
+  <script type="text/javascript">
+    var $grid = $('#projects');
+
+    // $grid.masonry({ percentPosition: true });
+    // $grid.masonry('layout');
+
+    // Trigger after images load.
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry({ percentPosition: true });
+      $grid.masonry('layout');
+    });
+  </script>
+
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
