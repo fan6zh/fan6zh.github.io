@@ -1,115 +1,33 @@
 <!DOCTYPE HTML>
 <html>
-<head>
+  <head>
+  
+	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQ4D13KL7"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
+
 	  gtag('config', 'G-9YQ4D13KL7');
 	</script>
 
-    <style>
-      :root {
-        --bg-color: #ffffff;
-        --text-color: #333333;
-        --link-color: #333333; /* Changed to Black/Dark for Light Mode Filters */
-        --accent-link: #007bff; /* Original blue for standard hyperlinks */
-      }
-
-      [data-theme="dark"] {
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --link-color: #e0e0e0; /* Matches text color in Dark Mode */
-        --accent-link: #49bf9f; /* Signature green for links in Dark Mode */
-      }
-
-      body {
-        background-color: var(--bg-color) !important;
-        color: var(--text-color) !important;
-        transition: background-color 0.3s;
-      }
-
-      /* Core Alignment */
-      #main, .grid, .list-item, .project-description, #intro, #intro-text {
-        background-color: transparent !important;
-      }
-
-      h1, h2, h3, b, i { color: inherit; }
-      
-      /* Standard Hyperlinks */
-      a { color: var(--accent-link); }
-
-      /* PRESERVE AWARD GREEN: Ensures the specific brand green stays as requested */
-      font[color="49bf9"], font[color="49bf9"] i {
-        color: #49bf9f !important;
-      }
-
-      /* Original Filter Button Styling - No background, no borders */
-      .button {
-        display: inline-block;
-        padding: 0.5em 1.0em;
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        color: #999999 !important; /* Muted color for inactive filters */
-        font-family: 'Asap', sans-serif;
-        font-size: 16px;
-        cursor: pointer;
-        outline: none;
-        transition: color 0.2s ease;
-      }
-
-      /* Active color only - Switches to black in light mode, e0e0e0 in dark mode */
-      .button.is-checked {
-        color: var(--link-color) !important;
-        background: none !important;
-      }
-
-      /* Dark Mode Toggle UI */
-      #theme-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 20px;
-        border: 1px solid var(--text-color);
-        background: transparent;
-        color: var(--text-color);
-        font-family: 'Asap', sans-serif;
-        font-size: 14px;
-        z-index: 1000;
-      }
-
-      [data-theme="dark"] img, [data-theme="dark"] video {
-        filter: brightness(.85) contrast(1.1);
-      }
-    </style>
-
-    <script>
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const target = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', target);
-        localStorage.setItem('theme', target);
-        document.getElementById('theme-toggle').innerHTML = target === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-      }
-    </script>
-
+	<!-- please do not copy the google tag, as the 'https://fastumi.com/' did -->
+		
+    <!-- Title -->
     <title>Fan Zhang - Honda Research Institute EU</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1000">
 
+    <!-- Isotope JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
+    <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -119,11 +37,6 @@
   </head>
 
   <body id="body">
-    <button id="theme-toggle" onclick="toggleTheme()">
-      <script>
-        document.write(localStorage.getItem('theme') === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode');
-      </script>
-    </button>
 
     <div id="main">
       <div id="intro">
@@ -165,6 +78,7 @@ I have been awarded
       </div>
 
       <div id="filters" class="button-group">
+        <!-- <button class="button" data-filter="*">Show All</button> -->
         <button class="button is-checked" data-filter=".highlight">Highlights</button>
         <button class="button" data-filter=".publication">Research</button>
         <button class="button" data-filter=".misc">Misc</button>
@@ -173,10 +87,12 @@ I have been awarded
 
       <div class="grid">
 
+        <!-- Highlights -->
         <div class="list-item highlight description" data-category="highlight">
           Some recent highlights from our research:
         </div>
 
+        <!-- Preview Videos -->
         <div class="list-item highlight previews" data-category="highlight">
 
           <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/sr.mp4" type="video/mp4"></video></a>
@@ -187,6 +103,7 @@ I have been awarded
 
         </div>
 
+        <!-- Truncated Set of Highlights (Shown by Default) -->
         <div id="main-highlights">
 
             <div class="list-item highlight" data-category="highlight">
@@ -226,6 +143,7 @@ I have been awarded
         </div>
 
 
+        <!-- Publications -->
         <div class="list-item publication" data-category="publication">
           <a href="https://hri-eu.github.io/flow-matching-policy/" class="thumbnail">
             <video playsinline="" muted="" autoplay="" loop="" width="180px">
@@ -503,6 +421,8 @@ I have been awarded
           </div>
         </div>
 
+
+        <!-- Talks -->
 
         <div class="list-item misc" data-category="misc">
           <p class="date">2025</p>Outstanding Paper Award, IROS 2025 Workshop on <a href="https://art-of-robustness-iros2025.github.io/">The Art of Robustness: Surviving Failures in Robotics</a>
