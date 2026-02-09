@@ -1,63 +1,62 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQ4D13KL7"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-9YQ4D13KL7');
-	</script>
-
-    <style>
+<style>
       :root {
         --bg-color: #ffffff;
         --text-color: #333333;
-        --title-color: #333333; /* Black in Light Mode */
-        --link-color: #333333; 
-        --accent-link: #007bff;
+        --title-color: #333333;
+        --standard-blue: #007bff;
+        --filter-inactive: #999999;
       }
 
       [data-theme="dark"] {
         --bg-color: #121212;
         --text-color: #e0e0e0;
-        --title-color: #ffffff; /* White in Dark Mode */
-        --link-color: #e0e0e0;
-        --accent-link: #49bf9f;
+        --title-color: #ffffff;
+        --standard-blue: #007bff;
+        --filter-inactive: #666666;
       }
 
+      /* Base Style Alignment */
       body {
         background-color: var(--bg-color) !important;
         color: var(--text-color) !important;
         transition: background-color 0.3s;
       }
 
-      /* Core Alignment */
       #main, .grid, .list-item, .project-description, #intro, #intro-text {
         background-color: transparent !important;
       }
 
-      /* Fix for Titles and Bold Text visibility */
-      h1, h2, h3, h3 a, b, i { 
-        color: var(--title-color) !important; 
+      /* Headings and Bold text (non-links) */
+      h1, h2, h3, b, i { 
+        color: var(--title-color); 
       }
       
-      /* Standard Hyperlinks (except titles) */
-      p a, .project-description a:not(h3 a) { color: var(--accent-link); }
+      /* GLOBAL LINK COLOR: Bio, Research, Titles, URLs, and SR section */
+      a, h3 a, .project-description a, .sr a, .list-item a { 
+        color: var(--standard-blue) !important; 
+        text-decoration: none !important;
+      }
+      
+      a:hover {
+        text-decoration: underline !important;
+      }
 
-      /* PRESERVE AWARD GREEN (Original Style) */
+      /* PRESERVE AWARD GREEN: Ensuring award text remains green */
       font[color="49bf9"], font[color="49bf9"] i {
         color: #49bf9f !important;
       }
 
-      /* Original Filter Button Styling */
+      /* Filter Buttons - Restored Original Style */
       .button {
         display: inline-block;
         padding: 0.5em 1.0em;
         background: none !important;
         border: none !important;
         box-shadow: none !important;
-        color: #999999 !important; 
+        color: var(--filter-inactive) !important;
         font-family: 'Asap', sans-serif;
         font-size: 16px;
         cursor: pointer;
@@ -66,11 +65,11 @@
       }
 
       .button.is-checked {
-        color: var(--link-color) !important;
-        background: none !important;
+        color: var(--title-color) !important;
+        font-weight: normal;
       }
 
-      /* Dark Mode Toggle UI */
+      /* Dark Mode Toggle */
       #theme-toggle {
         position: absolute;
         top: 20px;
@@ -103,6 +102,14 @@
         document.getElementById('theme-toggle').innerHTML = target === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
       }
     </script>
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQ4D13KL7"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-9YQ4D13KL7');
+	</script>
 
     <title>Fan Zhang - Honda Research Institute EU</title>
     <meta charset="utf-8" />
