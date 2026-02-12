@@ -1,118 +1,167 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-      :root {
-        --bg-color: #ffffff;
-        --text-color: #333333;
-        --title-color: #333333;
-        --standard-blue: #007bff;
-        --filter-inactive: #999999;
-      }
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --title-color: #333333;
+            --standard-blue: #007bff;
+            --filter-inactive: #999999;
+        }
 
-      [data-theme="dark"] {
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --title-color: #ffffff;
-        --standard-blue: #007bff;
-        --filter-inactive: #666666;
-      }
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --title-color: #ffffff;
+            --standard-blue: #007bff;
+            --filter-inactive: #666666;
+        }
 
-      /* Base Style Alignment */
-      body {
-        background-color: var(--bg-color) !important;
-        color: var(--text-color) !important;
-        transition: background-color 0.3s;
-      }
+        /* Base Style Alignment */
+        body {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color) !important;
+            transition: background-color 0.3s;
+        }
 
-      #main, .grid, .list-item, .project-description, #intro, #intro-text {
-        background-color: transparent !important;
-      }
+        #main, .grid, .list-item, .project-description, #intro, #intro-text {
+            background-color: transparent !important;
+        }
 
-      /* Headings and Bold text (non-links) */
-      h1, h2, h3, b, i { 
-        color: var(--title-color); 
-      }
-      
-      /* GLOBAL LINK COLOR: Bio, Research, Titles, URLs, and SR section */
-      a, h3 a, .project-description a, .sr a, .list-item a { 
-        color: var(--standard-blue) !important; 
-        text-decoration: none !important;
-      }
-      
-      a:hover {
-        text-decoration: underline !important;
-      }
+        /* Headings and Bold text (non-links) */
+        h1, h2, h3, b, i {
+            color: var(--title-color);
+        }
 
-      /* PRESERVE AWARD GREEN: Ensuring award text remains green */
-      font[color="49bf9"], font[color="49bf9"] i {
-        color: #49bf9f !important;
-      }
+        /* GLOBAL LINK COLOR */
+        a, h3 a, .project-description a, .sr a, .list-item a {
+            color: var(--standard-blue) !important;
+            text-decoration: none !important;
+        }
 
-      /* Filter Buttons - Restored Original Style */
-      .button {
-        display: inline-block;
-        padding: 0.5em 1.0em;
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        color: var(--filter-inactive) !important;
-        font-family: 'Asap', sans-serif;
-        font-size: 16px;
-        cursor: pointer;
-        outline: none;
-        transition: color 0.2s ease;
-      }
+        a:hover {
+            text-decoration: underline !important;
+        }
 
-      .button.is-checked {
-        color: var(--title-color) !important;
-        font-weight: normal;
-      }
+        /* PRESERVE AWARD GREEN */
+        font[color="49bf9"], font[color="49bf9"] i {
+            color: #49bf9f !important;
+        }
 
-      /* Dark Mode Toggle */
-      #theme-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 20px;
-        border: 1px solid var(--text-color);
-        background: transparent;
-        color: var(--text-color);
-        font-family: 'Asap', sans-serif;
-        font-size: 14px;
-        z-index: 1000;
-      }
+        /* --- POLISHED DIVIDER LINE --- */
+        .grid-divider {
+            width: 100% !important;
+            height: 1px !important;
+            margin: 50px 0 30px 0 !important; /* More space above, less below */
+            background: radial-gradient(circle, var(--filter-inactive) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            border: none !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            overflow: visible !important;
+        }
 
-      [data-theme="dark"] img, [data-theme="dark"] video {
-        filter: brightness(.85) contrast(1.1);
-      }
+        /* Optional: Add a subtle text label in the middle of the line */
+        .grid-divider::after {
+            content: "More Research";
+            background-color: var(--bg-color);
+            padding: 0 20px;
+            color: var(--filter-inactive);
+            font-family: 'Asap', sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        [data-theme="dark"] .grid-divider {
+            background: radial-gradient(circle, #444 0%, rgba(0, 0, 0, 0) 100%) !important;
+        }
+
+
+        /* Ensure thumbnails reserve vertical space before media loads */
+        .thumbnail {
+            display: block;
+            min-height: 120px;
+            width: 180px;
+            overflow: hidden;
+        }
+
+        .thumbnail video, .thumbnail img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Filter Buttons */
+        .button {
+            display: inline-block;
+            padding: 0.5em 1.0em;
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: var(--filter-inactive) !important;
+            font-family: 'Asap', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: color 0.2s ease;
+        }
+
+        .button.is-checked {
+            color: var(--title-color) !important;
+            font-weight: normal;
+        }
+
+        /* Dark Mode Toggle */
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 1px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+            font-family: 'Asap', sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        [data-theme="dark"] img, [data-theme="dark"] video {
+            filter: brightness(.85) contrast(1.1);
+        }
     </style>
 
     <script>
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const target = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', target);
-        localStorage.setItem('theme', target);
-        document.getElementById('theme-toggle').innerHTML = target === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-      }
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const target = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', target);
+            localStorage.setItem('theme', target);
+            document.getElementById('theme-toggle').innerHTML = target === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
     </script>
-	
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQ4D13KL7"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-9YQ4D13KL7');
-	</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQ4D13KL7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-9YQ4D13KL7');
+    </script>
 
     <title>Fan Zhang - Honda Research Institute EU</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=1000">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -123,43 +172,52 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
     </style>
-  </head>
+</head>
 
-  <body id="body">
-    <button id="theme-toggle" onclick="toggleTheme()">
-      <script>
+<body id="body">
+<button id="theme-toggle" onclick="toggleTheme()">
+    <script>
         document.write(localStorage.getItem('theme') === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode');
-      </script>
-    </button>
+    </script>
+</button>
 
-    <div id="main">
-      <div id="intro">
+<div id="main">
+    <div id="intro">
         <div id="intro-text">
-          <h1>Fan Zhang</h1>
-          <p>
-          I am a senior research scientist at 
-          <a href="https://www.honda-ri.de/institute/" target="_blank">Honda Research Institute EU</a>. I am also a visiting researcher at 
-          <a href="https://www.imperial.ac.uk/" target="_blank">Imperial College London</a>. I was an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow funded by 
-          <a href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/" target="_blank">Schmidt Futures</a>. I received my Ph.D. degree from Imperial College London (advised by Prof. 
-          <a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>).
-                    
-          </p>
+            <h1>Fan Zhang</h1>
+            <p>
+                I am a senior research scientist at
+                <a href="https://www.honda-ri.de/institute/" target="_blank">Honda Research Institute EU</a>. I am also
+                a visiting researcher at
+                <a href="https://www.imperial.ac.uk/" target="_blank">Imperial College London</a>. I was an Eric and
+                Wendy Schmidt AI in Science Postdoctoral Fellow funded by
+                <a href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/" target="_blank">Schmidt
+                    Futures</a>. I received my Ph.D. degree from Imperial College London (advised by Prof.
+                <a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank">Yiannis Demiris</a>).
 
-          <p>
-                    
-          My research interests cover many aspects of machine learning algorithms applied to general robot
-          manipulation. 
-          My research has been accepted at 
-          <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010" target="_blank">Science Robotics</a> and T-RO.
-I have been awarded 
-          <a href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html" target="_blank">The UK Best PhD in Robotics Award 2020 1st place held by Queen Mary</a>, and <a href="https://rai.ac.uk/ai-robotics-awards-2025/" target="_blank">Best Research Paper (Early Career Researcher), 2025 AI & Robotics Research Awards</a> held by TAS Hub, Responsible Ai UK and the Royal Society.
-                    
+            </p>
+
+            <p>
+
+                My research interests cover many aspects of machine learning algorithms applied to general robot
+                manipulation.
+                My research has been accepted at
+                <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010" target="_blank">Science Robotics</a>
+                and T-RO.
+                I have been awarded
+                <a href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html" target="_blank">The UK
+                    Best PhD in Robotics Award 2020 1st place held by Queen Mary</a>, and <a
+                    href="https://rai.ac.uk/ai-robotics-awards-2025/" target="_blank">Best Research Paper (Early Career
+                Researcher), 2025 AI & Robotics Research Awards</a> held by TAS Hub, Responsible Ai UK and the Royal
+                Society.
+
             <div id="more-bio" style="display: None">
-              <br>
+                <br>
             </div>
             <br>
             <a href="images/cv.pdf" target="_blank">CV</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -168,33 +226,45 @@ I have been awarded
             <a href="https://www.linkedin.com/in/fan-zhang-3a2b1071/" target="_blank">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="https://x.com/fanfanzhang0" target="_blank">Twitter</a>
             <br><br>
-          </p>
+            </p>
         </div>
         <div id="intro-image">
-          <img src="images/fanzhang.jpg">
+            <img src="images/fanzhang.jpg">
         </div>
-      </div>
+    </div>
 
-      <div id="filters" class="button-group">
+    <div id="filters" class="button-group">
         <button class="button is-checked" data-filter=".highlight">Highlights</button>
         <button class="button" data-filter=".publication">Research</button>
         <button class="button" data-filter=".misc">Misc</button>
         <button class="button" data-filter=".sr">Science Robotics</button>
-      </div>
+    </div>
 
-      <div class="grid">
+    <div class="grid">
 
         <div class="list-item highlight description" data-category="highlight">
-          Some recent highlights from our research:
+            Some recent highlights from our research:
         </div>
 
         <div class="list-item highlight previews" data-category="highlight">
 
-          <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/sr.mp4" type="video/mp4"></video></a>
+            <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010">
+                <video class="preview1" playsinline="" muted="" autoplay="" loop="">
+                    <source src="images/sr.mp4" type="video/mp4">
+                </video>
+            </a>
 
-          <a href="https://hri-eu.github.io/flow-matching-policy/"><video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="images/fm.mp4" type="video/mp4"></video></a>
+            <a href="https://hri-eu.github.io/flow-matching-policy/">
+                <video class="preview2" playsinline="" muted="" autoplay="" loop="">
+                    <source src="images/fm.mp4" type="video/mp4">
+                </video>
+            </a>
 
-          <a href="https://ieeexplore.ieee.org/abstract/document/10096824"><video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="images/zy.mp4" type="video/mp4"></video></a>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10096824">
+                <video class="preview3" playsinline="" muted="" autoplay="" loop="">
+                    <source src="images/zy.mp4" type="video/mp4">
+                </video>
+            </a>
 
         </div>
 
@@ -202,536 +272,614 @@ I have been awarded
 
             <div class="list-item highlight" data-category="highlight">
                 <b>Science Robotics, T-RO:</b> <a
-                    href="https://fan6zh.github.io/robot-dressing/">Robot-Assisted Dressing</a>	
+                    href="https://fan6zh.github.io/robot-dressing/">Robot-Assisted Dressing</a>
             </div>
-            
+
             <div class="list-item highlight" data-category="highlight">
-                <b>VLA, World Model with Flow Matching:</b> 
+                <b>VLA, World Model with Flow Matching:</b>
                 <a href="https://arxiv.org/abs/2512.08405">Audio World Model</a>,
                 <a href="https://hri-eu.github.io/flow-matching-policy/">Robot Flow Matching Policy</a>
             </div>
-            
-            
+
+
             <div class="list-item highlight" data-category="highlight">
                 <b>The UK Best PhD in Robotics Award 2020:</b> <a
-                    href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html">1st place</a>, held by Advanced Robotics @ Queen Mary
+                    href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html">1st place</a>, held by
+                Advanced Robotics @ Queen Mary
             </div>
-            
+
             <div class="list-item highlight" data-category="highlight">
                 <b>2025 AI & Robotics Research Awards:</b> <a
-                    href="https://rai.ac.uk/ai-robotics-awards-2025/">Best Research Paper, Early Career Researcher</a>, held by TAS Hub, Responsible Ai UK and the Royal Society
+                    href="https://rai.ac.uk/ai-robotics-awards-2025/">Best Research Paper, Early Career Researcher</a>,
+                held by TAS Hub, Responsible Ai UK and the Royal Society
             </div>
-          
+
             <div class="list-item highlight" data-category="highlight">
                 <b>Fellowship:</b> <a
-                    href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/">Eric & Wendy Schmidt AI in Science Postdoctoral Fellowship</a>
+                    href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/">Eric & Wendy Schmidt
+                AI in Science Postdoctoral Fellowship</a>
             </div>
 
-            
+
             <div class="list-item highlight" data-category="highlight">
-            	<img src="images/AiR.jpg" alt="Description of image" style="width: 27%; margin-right: 5%;">
-		<img src="images/mary.png" alt="Description of image" style="width: 27%; margin-right: 5%;">
-		<img src="images/sr.png" alt="Description of image" style="width: 30%; margin-right: 0%;">		
+                <img src="images/AiR.jpg" alt="Description of image" style="width: 27%; margin-right: 5%;">
+                <img src="images/mary.png" alt="Description of image" style="width: 27%; margin-right: 5%;">
+                <img src="images/sr.png" alt="Description of image" style="width: 30%; margin-right: 0%;">
             </div>
-	
+
         </div>
 
 
         <div class="list-item publication" data-category="publication">
-          <a href="https://hri-eu.github.io/flow-matching-policy/" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/world.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2512.08405">Learning Robot Manipulation from Audio World Models</a></h3>
-            <p>
-              Fan Zhang, Michael Gienger<br>
-                <i>arXiv, 2025</i><br>
-                <a href="https://arxiv.org/abs/2512.08405">Paper</a>
-                <br> 
-            </p>
-          </div>
-        </div>
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://hri-eu.github.io/flow-matching-policy/" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/fm.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://hri-eu.github.io/flow-matching-policy/">Affordance-based Robot Manipulation with Flow Matching</a></h3>
-            <p>
-              Fan Zhang, Michael Gienger<br>
-                <i>arXiv, 2025</i><br>
-                <a href="https://hri-eu.github.io/flow-matching-policy/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/abs/2409.01083">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/HRI-EU/flow_matching">Code</a>
-                <br> 
-            </p>
-          </div>
-        </div>
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://fan6zh.github.io/robot-dressing/" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/sr.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://fan6zh.github.io/robot-dressing/">Learning garment manipulation policies toward robot-assisted dressing</a></h3>
-            <p>
-              Fan Zhang, Yiannis Demiris<br>
-                <i>Science Robotics, 2022</i><br>
-                <font color="49bf9"><i>&#9733; Best Research Paper (Early Career Researcher), 2025 AI & Robotics Research Awards, held by TAS Hub, Responsible Ai UK and the Royal Society &#9733;</i></font><br>
-                <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=6o5O4aslhDs">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/fan6zh/robot_dressing">Code</a>
-                <br> 
-            </p>
-          </div>
-        </div>
-        
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/8685136" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/tro.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/8685136">Probabilistic Real-Time User Posture Tracking for Personalized Robot-Assisted Dressing</a></h3>
-            <p>
-              Fan Zhang, Antoine Cully, Yiannis Demiris<br>
-                <i>IEEE Transactions on Robotics, 2019</i><br>
-                <font color="49bf9"><i>&#9733; The Queen Mary UK Best PhD in Robotics Award 2020 1st place &#9733;</i></font><br>
-                <a href="https://ieeexplore.ieee.org/document/8685136">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=9S8joEXxDCM">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/fan6zh/robot_dressing">Code</a>
-                <br> 
-            </p>
-          </div>
-        </div>     
-        
-        
-          
-          <div class="list-item publication" data-category="publication">
-          <a href="https://hri-eu.github.io/ccdp/" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/ccdp.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://hri-eu.github.io/ccdp/">CCDP: Composition of Conditional Diffusion Policies with Guided Sampling</a></h3>
-            <p>
-              Amirreza Razmjoo, Sylvain Calinon, Michael Gienger, Fan Zhang<br>
-              <i>International Conference on Intelligent Robots and Systems (IROS), 2025</i><br> 
-              <font color="49bf9"><i>&#9733; Outstanding Paper Award at IROS 2025 Workshop on The Art of Robustness: Surviving Failures in Robotics &#9733;</i></font><br>
-                <a href="https://hri-eu.github.io/ccdp/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/abs/2503.15386">Paper</a> 
-                <br> 
-            </p>
-          </div>
-        </div>
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/abs/2508.08999" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/roman.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2508.08999">Generation of Real-time Robotic Emotional Expressions Learning from Human Demonstration in Mixed Reality</a></h3>
-            <p>
-              Chao Wang, Michael Gienger, Fan Zhang<br>
-              <i>International Conference on Intelligent Robots and Systems (IROS), 2025, Foundation Models for Robotic Design workshop</i><br> 
-                <a href="https://wallacewangchao.github.io/fm-expressions/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/abs/2508.08999">Paper</a> 
-                <br> 
-            </p>
-          </div>
-        </div>
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/abs/2506.20373" class="thumbnail">
-          <img src="images/carma.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2506.20373">CARMA: Context-Aware Situational Grounding of Human-Robot Group Interactions by Combining Vision-Language Models with Object and Action Recognition</a></h3>
-            <p>
-              Joerg Deigmoeller, Stephan Hasler, Nakul Agarwal, Daniel Tanneberg, Anna Belardinelli, Reza Ghoddoosian, Chao Wang, Felix Ocker, Fan Zhang, Behzad Dariush, Michael Gienger<br>
-                <i>IEEE International Conference on Robotics and Automation (ICRA), 2026</i><br> 
-                <a href="https://sites.google.com/view/aura-robot/home">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/abs/2506.20373">Paper</a> 
-                <br>
-            </p>
-          </div>
-        </div>
-        
-         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/10096824" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/zy.mp4" type="video/mp4">
-           </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/10096824">Self-Supervised Learning for Automated Multi-Modal Dance Performance Assessment</a></h3>
-            <p>
-              Yun Zhong, Fan Zhang, Yiannis Demiris<br>
-                <i>International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2023</i><br>
-                <a href="https://ieeexplore.ieee.org/document/10096824">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=Jrs6G0BkFeQ&t=6s">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/YunZhongNikki/DanceMVP">Code</a>
-                <br>
-            </p>
-          </div>
-        </div>    
-        
-
-        <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/10185075" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/ral.mp4" type="video/mp4">
-                          </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/10185075">Visual-Tactile Learning of Garment Unfolding for Robot-Assisted Dressing</a></h3>
-            <p>
-              Fan Zhang, Yiannis Demiris<br>
-                <i>IEEE Robotics and Automation Letters (RA-L), 2023</i><br>
-                <a href="https://ieeexplore.ieee.org/document/10185075">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=V-HCLkB17SY">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/fan6zh/robot_dressing">Code</a>
-                <br>
-            </p>
-          </div>
-        </div>
-        
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/abs/2110.02903" class="thumbnail">
-          <img src="images/seg.png" alt="" /></a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2110.02903">Grasp-oriented Fine-grained Cloth Segmentation without Real Supervision</a></h3>
-            <p>
-              Ruijie Ren, Mohit Gurnani Rajesh, Jordi Sanchez-Riera, Adrian Lopez-Rodriguez, Fan Zhang, Yurun Tian, Guillem Alenyà, Antonio Agudo, Yiannis Demiris, Krystian Mikolajczyk, Francesc Moreno-Noguer<br>
-                <i> International Conference on Machine Vision and Applications, 2023</i><br>
-                <a href="https://arxiv.org/abs/2110.02903">Paper</a>
-                <br>
-            </p>
-          </div>
+            <a href="https://hri-eu.github.io/flow-matching-policy/" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/world.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://arxiv.org/abs/2512.08405">Learning Robot Manipulation from Audio World Models</a>
+                </h3>
+                <p>
+                    Fan Zhang, Michael Gienger<br>
+                    <i>arXiv, 2025</i><br>
+                    <a href="https://arxiv.org/abs/2512.08405">Paper</a>
+                    <br>
+                </p>
+            </div>
         </div>
 
         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/10185075" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/icra.mp4" type="video/mp4">
-                          </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/9196994">Learning Grasping Points for Garment Manipulation in Robot-Assisted Dressing</a></h3>
-            <p>
-		Fan Zhang, Yiannis Demiris<br>
-              <i>IEEE International Conference on Robotics and Automation (ICRA), 2020</i><br>
-                <a href="https://ieeexplore.ieee.org/document/9196994">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=yVScTBbw7E4>Shelf">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/fan6zh/robot_dressing">Code</a>
-            </p>
-          </div>
+            <a href="https://hri-eu.github.io/flow-matching-policy/" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/fm.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://hri-eu.github.io/flow-matching-policy/">Affordance-based Robot Manipulation with
+                    Flow Matching</a></h3>
+                <p>
+                    Fan Zhang, Michael Gienger<br>
+                    <i>arXiv, 2025</i><br>
+                    <a href="https://hri-eu.github.io/flow-matching-policy/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/abs/2409.01083">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/HRI-EU/flow_matching">Code</a>
+                    <br>
+                </p>
+            </div>
         </div>
-        
+
         <div class="list-item publication" data-category="publication">
-          <a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019" class="thumbnail"><img src="images/surg1.png" alt="" /></a>
-          <div class="project-description">
-            <h3><a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019">Preoperative Optimization of the Surgical Robot considering Internal Diversity of Workspace</a></h3>
-            <p>
-		Zhiyuan Yan, Zhijiang Du, Fan Zhang, Weidong Wang<br>
-              <i>Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science, 2018</i><br>
-                <a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019">Paper</a>
-            </p>
-          </div>
+            <a href="https://fan6zh.github.io/robot-dressing/" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/sr.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://fan6zh.github.io/robot-dressing/">Learning garment manipulation policies toward
+                    robot-assisted dressing</a></h3>
+                <p>
+                    Fan Zhang, Yiannis Demiris<br>
+                    <i>Science Robotics, 2022</i><br>
+                    <i style="color: #e67e22 !important;">&#9733; Best Research Paper (Early Career Researcher), 2025 AI
+                        & Robotics Research Awards, held by TAS Hub, Responsible Ai UK and the Royal Society &#9733;</i><br>
+                    <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=6o5O4aslhDs">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/fan6zh/robot_dressing">Code</a>
+                    <br>
+                </p>
+            </div>
         </div>
-        
+
+
         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/8206206" class="thumbnail"><img src="images/dress.png" alt="" /></a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/8206206">Personalized Robot-Assisted Dressing using User Modeling in Latent Spaces</a></h3>
-            <p>
-		Fan Zhang, Yiannis Demiris<br>
-              <i>International Conference on Intelligent Robots and Systems (IROS), 2017</i><br>
-                <a href="https://ieeexplore.ieee.org/document/8206206">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=FT5VKm3kgoM">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/fan6zh/robot_dressing">Code</a>
-            </p>
-          </div>
+            <a href="https://ieeexplore.ieee.org/document/8685136" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/tro.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/8685136">Probabilistic Real-Time User Posture Tracking
+                    for Personalized Robot-Assisted Dressing</a></h3>
+                <p>
+                    Fan Zhang, Antoine Cully, Yiannis Demiris<br>
+                    <i>IEEE Transactions on Robotics, 2019</i><br>
+                    <i style="color: #e67e22 !important;">&#9733; The Queen Mary UK Best PhD in Robotics Award 2020 1st
+                        place &#9733;</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/8685136">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=9S8joEXxDCM">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/fan6zh/robot_dressing">Code</a>
+                    <br>
+                </p>
+            </div>
         </div>
-        
+
+        <div class="list-item publication grid-divider" data-category="publication"></div>
+
         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/7989484" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/surgical.mp4" type="video/mp4">
-                          </video>
-          </a>
-                    <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/7989484">Preoperative Planning for the Multi-Arm Surgical Robot using PSO-GP-based Performance Optimization</a></h3>
-            <p>
-		Fan Zhang, Zhiyuan Yan, Zhijang Du<br>
-              <i>IEEE International Conference on Robotics and Automation (ICRA), 2017</i><br>
-                <a href="https://ieeexplore.ieee.org/document/7989484">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://youtu.be/mS5WNINKPIk">Video</a>
-            </p>
-          </div>
-        </div>
-        
-         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/7558682" class="thumbnail"><img src="images/surg2.png" alt="" /></a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/7558682">Preoperative setup planning for robotic surgery based on a simulation platform and Gaussian process</a></h3>
-            <p>
-		Fan Zhang, Zhiyuan Yan, Zhijang Du<br>
-              <i>IEEE International Conference on Mechatronics and Automation (ICMA), 2016</i><br>
-              <font color="49bf9"><i>&#9733; Best Student Paper Award &#9733;</i></font><br>
-                <a href="https://ieeexplore.ieee.org/document/7558682">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://youtu.be/mS5WNINKPIk">Video</a>
-            </p>
-          </div>
+            <a href="https://hri-eu.github.io/ccdp/" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/ccdp.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://hri-eu.github.io/ccdp/">CCDP: Composition of Conditional Diffusion Policies with
+                    Guided Sampling</a></h3>
+                <p>
+                    Amirreza Razmjoo, Sylvain Calinon, Michael Gienger, Fan Zhang<br>
+                    <i>International Conference on Intelligent Robots and Systems (IROS), 2025</i><br>
+                    <i style="color: #e67e22 !important;">&#9733; Outstanding Paper Award at IROS 2025 Workshop on The
+                        Art of Robustness: Surviving Failures in Robotics &#9733;</i><br>
+                    <a href="https://hri-eu.github.io/ccdp/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/abs/2503.15386">Paper</a>
+                    <br>
+                </p>
+            </div>
         </div>
 
-         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/grasp.mp4" type="video/mp4">
-                          </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176">An Under-Actuated Manipulation Controller Based on Workspace Analysis and Gaussian Processes</a></h3>
-            <p>
-		Fan Zhang, Yanyu Su, Xiang Zhang, Wei Dong, Zhijiang Du<br>
-              <i>International Conference on Intelligent Robots and Systems (IROS), 2015</i><br>
-                <a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://youtu.be/yMQN93P9HJU">Video</a>
-            </p>
-          </div>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://arxiv.org/abs/2508.08999" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/roman.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://arxiv.org/abs/2508.08999">Generation of Real-time Robotic Emotional Expressions
+                    Learning from Human Demonstration in Mixed Reality</a></h3>
+                <p>
+                    Chao Wang, Michael Gienger, Fan Zhang<br>
+                    <i>International Conference on Intelligent Robots and Systems (IROS), 2025, Foundation Models for
+                        Robotic Design workshop</i><br>
+                    <a href="https://wallacewangchao.github.io/fm-expressions/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/abs/2508.08999">Paper</a>
+                    <br>
+                </p>
+            </div>
         </div>
 
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2025</p>Outstanding Paper Award, IROS 2025 Workshop on <a href="https://art-of-robustness-iros2025.github.io/">The Art of Robustness: Surviving Failures in Robotics</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Imperial College London <a href="https://www.imperial.ac.uk/electrical-engineering/research/intelligent-systems-and-networks/">Intelligent systems and networks Seminar</a>
-        </div>
-        
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Guest, Inaugural Meeting, <a href="https://assistive-autonomy.ed.ac.uk/about/">Centre for AI in Assistive Autonomy</a>
-        </div>
-        
-         <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, 2025 IROS Workshop on <a href="https://romado-workshop.github.io/ROMADO2025.github.io/">Robotic Manipulation of Deformable Objects (RoMaDo)</a>
-        </div>
-        
-         <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-chair, IROS 2025 session "Factory Automation and Failure Detection"</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Collaborator, The University of Edinburgh <a href="https://assistive-autonomy.ed.ac.uk/project/fan-zhang/">The Centre for AI in Assistive Autonomy</a>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://arxiv.org/abs/2506.20373" class="thumbnail">
+                <img src="images/carma.png" alt=""/>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://arxiv.org/abs/2506.20373">CARMA: Context-Aware Situational Grounding of Human-Robot
+                    Group Interactions by Combining Vision-Language Models with Object and Action Recognition</a></h3>
+                <p>
+                    Joerg Deigmoeller, Stephan Hasler, Nakul Agarwal, Daniel Tanneberg, Anna Belardinelli, Reza
+                    Ghoddoosian, Chao Wang, Felix Ocker, Fan Zhang, Behzad Dariush, Michael Gienger<br>
+                    <i>IEEE International Conference on Robotics and Automation (ICRA), 2026</i><br>
+                    <a href="https://sites.google.com/view/aura-robot/home">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/abs/2506.20373">Paper</a>
+                    <br>
+                </p>
+            </div>
         </div>
 
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, University of York <a href="https://www.york.ac.uk/yorrobots/news-events/yorrobots-events/seminar-series/2025/generalmanipulationforassistiverobotics/">YorRobots Seminar</a>
-        </div>
-
-	<div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Edinburgh Centre for Robotics <a href="https://www.edinburgh-robotics.org/events/ipab-visitor-seminar-general-manipulation-assistive-robotics">IPAB visitor seminar</a>
-        </div>
-
-	<div class="list-item misc" data-category="misc">
-          <p class="date"></p>Comittee Member, Leonard Hinckeldey's PhD Annual Review, <a href="The University of Edinburgh">The University of Edinburgh</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, The University of Edinburgh <a href="https://agents-lab.org/">Autonomous Agents Research Group</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Imperial College London <a href="https://www.imperial.ac.uk/adaptive-intelligent-robotics">Adaptive & Intelligent Robotics Lab</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2024</p>Invited Talk, University of Hamburg <a href="https://tams.informatik.uni-hamburg.de/">Technical Aspects of Multimodal Systems (TAMS)</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Organizer, RSS <a href="https://sites.google.com/view/rss2024-assistive-robotics">Workshop on Assistive Robots</a>
-        </div>
-        
-         <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Organizer, Imperial-X & Schmidt Futures <a href="https://www.imperial.ac.uk/events/179627/i-x-breaking-topics-in-ai-conference-2/">Breaking Topics in AI conference</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2023</p>Invited Talk, King's College London <a href="https://sairlab.github.io/">Social AI & Robotics Laboratory Seminar</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Imperial College London <a href="https://www.imperial.ac.uk/mathematics/">AI seminar in Statistics</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Organizer, ICRA <a href="https://sites.google.com/unisi.it/workshop-manipulation">Workshop on Assistive Manipulation</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Involved Projects, MURI <a href="https://gtr.ukri.org/projects?ref=EP%2FP008461%2F1">Closed-Loop Multisensory Brain-Computer Interface for Enhanced Decision Accuracy</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2022</p>Invited Talk, Tsinghua University <a href="https://www.cs.tsinghua.edu.cn/csen//">Intelligent Robot Seminar</a> (live audience: 150,000) 
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Apple
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Involved Projects, UKRI <a href="https://gtr.ukri.org/projects?ref=EP%2FV026682%2F1">Trustworthy Autonomous Systems Node in Trust</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Involved Projects, Innovate UK D-RISK <a href="https://www.dgcities.com/drisk">Learning Edge Cases for Autonomous Vehicles</a>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/10096824" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/zy.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/10096824">Self-Supervised Learning for Automated
+                    Multi-Modal Dance Performance Assessment</a></h3>
+                <p>
+                    Yun Zhong, Fan Zhang, Yiannis Demiris<br>
+                    <i>International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2023</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/10096824">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=Jrs6G0BkFeQ&t=6s">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/YunZhongNikki/DanceMVP">Code</a>
+                    <br>
+                </p>
+            </div>
         </div>
 
 
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/10185075" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/ral.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/10185075">Visual-Tactile Learning of Garment Unfolding
+                    for Robot-Assisted Dressing</a></h3>
+                <p>
+                    Fan Zhang, Yiannis Demiris<br>
+                    <i>IEEE Robotics and Automation Letters (RA-L), 2023</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/10185075">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=V-HCLkB17SY">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/fan6zh/robot_dressing">Code</a>
+                    <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://arxiv.org/abs/2110.02903" class="thumbnail">
+                <img src="images/seg.png" alt=""/></a>
+            <div class="project-description">
+                <h3><a href="https://arxiv.org/abs/2110.02903">Grasp-oriented Fine-grained Cloth Segmentation without
+                    Real Supervision</a></h3>
+                <p>
+                    Ruijie Ren, Mohit Gurnani Rajesh, Jordi Sanchez-Riera, Adrian Lopez-Rodriguez, Fan Zhang, Yurun
+                    Tian, Guillem Alenyà, Antonio Agudo, Yiannis Demiris, Krystian Mikolajczyk, Francesc
+                    Moreno-Noguer<br>
+                    <i> International Conference on Machine Vision and Applications, 2023</i><br>
+                    <a href="https://arxiv.org/abs/2110.02903">Paper</a>
+                    <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/10185075" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/icra.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/9196994">Learning Grasping Points for Garment
+                    Manipulation in Robot-Assisted Dressing</a></h3>
+                <p>
+                    Fan Zhang, Yiannis Demiris<br>
+                    <i>IEEE International Conference on Robotics and Automation (ICRA), 2020</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/9196994">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=yVScTBbw7E4>Shelf">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/fan6zh/robot_dressing">Code</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019" class="thumbnail"><img
+                    src="images/surg1.png" alt=""/></a>
+            <div class="project-description">
+                <h3><a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019">Preoperative Optimization of
+                    the Surgical Robot considering Internal Diversity of Workspace</a></h3>
+                <p>
+                    Zhiyuan Yan, Zhijiang Du, Fan Zhang, Weidong Wang<br>
+                    <i>Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering
+                        Science, 2018</i><br>
+                    <a href="https://journals.sagepub.com/doi/abs/10.1177/0954406217699019">Paper</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/8206206" class="thumbnail"><img src="images/dress.png"
+                                                                                          alt=""/></a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/8206206">Personalized Robot-Assisted Dressing using
+                    User Modeling in Latent Spaces</a></h3>
+                <p>
+                    Fan Zhang, Yiannis Demiris<br>
+                    <i>International Conference on Intelligent Robots and Systems (IROS), 2017</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/8206206">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=FT5VKm3kgoM">Video</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://github.com/fan6zh/robot_dressing">Code</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/7989484" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/surgical.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/7989484">Preoperative Planning for the Multi-Arm
+                    Surgical Robot using PSO-GP-based Performance Optimization</a></h3>
+                <p>
+                    Fan Zhang, Zhiyuan Yan, Zhijang Du<br>
+                    <i>IEEE International Conference on Robotics and Automation (ICRA), 2017</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/7989484">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://youtu.be/mS5WNINKPIk">Video</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/7558682" class="thumbnail"><img src="images/surg2.png"
+                                                                                          alt=""/></a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/7558682">Preoperative setup planning for robotic
+                    surgery based on a simulation platform and Gaussian process</a></h3>
+                <p>
+                    Fan Zhang, Zhiyuan Yan, Zhijang Du<br>
+                    <i>IEEE International Conference on Mechatronics and Automation (ICMA), 2016</i><br>
+                    <font color="49bf9"><i>&#9733; Best Student Paper Award &#9733;</i></font><br>
+                    <a href="https://ieeexplore.ieee.org/document/7558682">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://youtu.be/mS5WNINKPIk">Video</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+            <a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176" class="thumbnail">
+                <video playsinline="" muted="" autoplay="" loop="" width="180px">
+                    <source src="images/grasp.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176">An Under-Actuated
+                    Manipulation Controller Based on Workspace Analysis and Gaussian Processes</a></h3>
+                <p>
+                    Fan Zhang, Yanyu Su, Xiang Zhang, Wei Dong, Zhijiang Du<br>
+                    <i>International Conference on Intelligent Robots and Systems (IROS), 2015</i><br>
+                    <a href="https://ieeexplore.ieee.org/document/7354176?arnumber=7354176">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://youtu.be/yMQN93P9HJU">Video</a>
+                </p>
+            </div>
+        </div>
+
+
         <div class="list-item misc" data-category="misc">
-          <p class="date">2021+</p>Invited Talk, The Institution of Engineering and Technology <a href="https://tv.theiet.org/?eventvideoid=13345"> Human Motion Analysis for Healthcare Applications</a>
+            <p class="date">2025</p>Outstanding Paper Award, IROS 2025 Workshop on <a
+                href="https://art-of-robustness-iros2025.github.io/">The Art of Robustness: Surviving Failures in
+            Robotics</a>
         </div>
 
         <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Invited Talk, Imperial College London <a href="https://www.imperial.ac.uk/hamlyn-centre/">The Hamlyn Centre</a>
-        </div>
-       
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Press coverage, <a href="https://www.bloomberg.com/news/articles/2019-08-22/nurse-named-baxter-that-helps-you-dress-could-aid-staff-shortage">Bloomberg</a>, <a href="https://www.thetimes.co.uk/article/baxter-the-nursebot-to-help-care-for-ageing-population-9nj57xqvl">The Times</a>, <a href="https://www.dailymail.co.uk/health/article-7386631/Scientists-create-Baxter-robot-assist-elderly-amid-shortage-nurses.html">Daily Mail</a>, <a href="https://www.telegraph.co.uk/technology/2019/08/22/meet-baxter-robot-nurse-could-help-dress-elderly-aid-nhs-staff/">Telegraph</a>, <a href="https://institutions.newscientist.com/article/2315052-robotic-nurse-can-dress-a-mannequin-in-a-hospital-gown/">NewScientist</a>, <a href="https://techxplore.com/news/2022-04-robot-surgical-gown-supine-mannequin.html">TechXplore</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Reviewer, RA-L, T-RO, IJRR, Scientific Reports, ICRA, IROS, RSS, WACV, Humanoids</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Reviewer Editor, Frontiers in Robotics and AI-Robot Learning and Evolution</a>
+            <p class="date"></p>Invited Talk, Imperial College London <a
+                href="https://www.imperial.ac.uk/electrical-engineering/research/intelligent-systems-and-networks/">Intelligent
+            systems and networks Seminar</a>
         </div>
 
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Guest, Inaugural Meeting, <a href="https://assistive-autonomy.ed.ac.uk/about/">Centre
+            for AI in Assistive Autonomy</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, 2025 IROS Workshop on <a
+                href="https://romado-workshop.github.io/ROMADO2025.github.io/">Robotic Manipulation of Deformable
+            Objects (RoMaDo)</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Co-chair, IROS 2025 session "Factory Automation and Failure Detection"</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Collaborator, The University of Edinburgh <a
+                href="https://assistive-autonomy.ed.ac.uk/project/fan-zhang/">The Centre for AI in Assistive
+            Autonomy</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, University of York <a
+                href="https://www.york.ac.uk/yorrobots/news-events/yorrobots-events/seminar-series/2025/generalmanipulationforassistiverobotics/">YorRobots
+            Seminar</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, Edinburgh Centre for Robotics <a
+                href="https://www.edinburgh-robotics.org/events/ipab-visitor-seminar-general-manipulation-assistive-robotics">IPAB
+            visitor seminar</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Comittee Member, Leonard Hinckeldey's PhD Annual Review, <a
+                href="The University of Edinburgh">The University of Edinburgh</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, The University of Edinburgh <a href="https://agents-lab.org/">Autonomous
+            Agents Research Group</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, Imperial College London <a
+                href="https://www.imperial.ac.uk/adaptive-intelligent-robotics">Adaptive & Intelligent Robotics Lab</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date">2024</p>Invited Talk, University of Hamburg <a
+                href="https://tams.informatik.uni-hamburg.de/">Technical Aspects of Multimodal Systems (TAMS)</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Organizer, RSS <a href="https://sites.google.com/view/rss2024-assistive-robotics">Workshop
+            on Assistive Robots</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Organizer, Imperial-X & Schmidt Futures <a
+                href="https://www.imperial.ac.uk/events/179627/i-x-breaking-topics-in-ai-conference-2/">Breaking Topics
+            in AI conference</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date">2023</p>Invited Talk, King's College London <a href="https://sairlab.github.io/">Social AI &
+            Robotics Laboratory Seminar</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, Imperial College London <a href="https://www.imperial.ac.uk/mathematics/">AI
+            seminar in Statistics</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Organizer, ICRA <a href="https://sites.google.com/unisi.it/workshop-manipulation">Workshop
+            on Assistive Manipulation</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Involved Projects, MURI <a href="https://gtr.ukri.org/projects?ref=EP%2FP008461%2F1">Closed-Loop
+            Multisensory Brain-Computer Interface for Enhanced Decision Accuracy</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date">2022</p>Invited Talk, Tsinghua University <a href="https://www.cs.tsinghua.edu.cn/csen//">Intelligent
+            Robot Seminar</a> (live audience: 150,000)
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, Apple
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Involved Projects, UKRI <a href="https://gtr.ukri.org/projects?ref=EP%2FV026682%2F1">Trustworthy
+            Autonomous Systems Node in Trust</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Involved Projects, Innovate UK D-RISK <a href="https://www.dgcities.com/drisk">Learning
+            Edge Cases for Autonomous Vehicles</a>
+        </div>
+
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date">2021+</p>Invited Talk, The Institution of Engineering and Technology <a
+                href="https://tv.theiet.org/?eventvideoid=13345"> Human Motion Analysis for Healthcare Applications</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Invited Talk, Imperial College London <a
+                href="https://www.imperial.ac.uk/hamlyn-centre/">The Hamlyn Centre</a>
+        </div>
+
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Press coverage, <a
+                href="https://www.bloomberg.com/news/articles/2019-08-22/nurse-named-baxter-that-helps-you-dress-could-aid-staff-shortage">Bloomberg</a>,
+            <a href="https://www.thetimes.co.uk/article/baxter-the-nursebot-to-help-care-for-ageing-population-9nj57xqvl">The
+                Times</a>, <a
+                href="https://www.dailymail.co.uk/health/article-7386631/Scientists-create-Baxter-robot-assist-elderly-amid-shortage-nurses.html">Daily
+            Mail</a>, <a
+                href="https://www.telegraph.co.uk/technology/2019/08/22/meet-baxter-robot-nurse-could-help-dress-elderly-aid-nhs-staff/">Telegraph</a>,
+            <a href="https://institutions.newscientist.com/article/2315052-robotic-nurse-can-dress-a-mannequin-in-a-hospital-gown/">NewScientist</a>,
+            <a href="https://techxplore.com/news/2022-04-robot-surgical-gown-supine-mannequin.html">TechXplore</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Reviewer, RA-L, T-RO, IJRR, Scientific Reports, ICRA, IROS, RSS, WACV, Humanoids</a>
+        </div>
+
+        <div class="list-item misc" data-category="misc">
+            <p class="date"></p>Reviewer Editor, Frontiers in Robotics and AI-Robot Learning and Evolution</a>
+        </div>
 
 
         <div class="list-item sr" data-category="sr">
           <span class="image fit" style="margin-bottom: 1.5em;">
-	<video autoplay loop muted playsinline style="width: 60%; margin-right: 5%;"><source src="images/sr.mp4" type="video/mp4"> </video>
+	<video autoplay loop muted playsinline style="width: 60%; margin-right: 5%;"><source src="images/sr.mp4"
+                                                                                         type="video/mp4"> </video>
 		</span>
-	<p style="line-height: 1.5em;">
+            <p style="line-height: 1.5em;">
 
-	<font color="49bf9"><i>&#9733; Science Robotics, 2022 &#9733;</i></font><br>
-	Learning Garment Manipulation Policies towards Robot-Assisted Dressing<br>
-	Fan Zhang, Yiannis Demiris<br><br>
-        Paper <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010">https://www.science.org/doi/10.1126/scirobotics.abm6010</a><br>
-	Code is here <a href="https://github.com/fan6zh/robot_dressing">https://github.com/fan6zh/robot_dressing</a><br>
-        Please find more details on our website <a href="https://fan6zh.github.io/robot-dressing/">https://fan6zh.github.io/robot-dressing/</a><br>
-	</p>
+                <font color="49bf9"><i>&#9733; Science Robotics, 2022 &#9733;</i></font><br>
+                Learning Garment Manipulation Policies towards Robot-Assisted Dressing<br>
+                Fan Zhang, Yiannis Demiris<br><br>
+                Paper <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010">https://www.science.org/doi/10.1126/scirobotics.abm6010</a><br>
+                Code is here <a
+                    href="https://github.com/fan6zh/robot_dressing">https://github.com/fan6zh/robot_dressing</a><br>
+                Please find more details on our website <a href="https://fan6zh.github.io/robot-dressing/">https://fan6zh.github.io/robot-dressing/</a><br>
+            </p>
         </div>
-      
-      </div>
-
-      <div id="footer">This webpage template was recycled from <a href="https://andyzeng.github.io/">here</a>.</div>
 
     </div>
 
-    <script>
+    <div id="footer">This webpage template was recycled from <a href="https://andyzeng.github.io/">here</a>.</div>
 
-      // Isotope grid.
-      var $grid = $('.grid').isotope({
+</div>
+
+<script>
+
+    // Isotope grid.
+    var $grid = $('.grid').isotope({
         itemSelector: '.list-item',
         layoutMode: 'fitRows',
         transitionDuration: 0,
         stagger: 10,
         initLayout: false,
         getSortData: {
-          name: '.name',
-          symbol: '.symbol',
-          number: '.number parseInt',
-          category: '[data-category]',
-          weight: function( itemElem ) {
-            var weight = $( itemElem ).find('.weight').text();
-            return parseFloat( weight.replace( /[\(\)]/g, '') );
-          }
+            name: '.name',
+            symbol: '.symbol',
+            number: '.number parseInt',
+            category: '[data-category]',
+            weight: function (itemElem) {
+                var weight = $(itemElem).find('.weight').text();
+                return parseFloat(weight.replace(/[\(\)]/g, ''));
+            }
         }
-      });
+    });
 
-      // Bind filter button click.
-      $('#filters').on( 'click', 'button', function() {
-        var filterValue = $( this ).attr('data-filter');
+    // Bind filter button click.
+    $('#filters').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
         localStorage.setItem('filterValue', filterValue);
-        $grid.isotope({ filter: filterValue });
-      });
+        $grid.isotope({filter: filterValue});
+    });
 
-      // Change is-checked class on buttons.
-      $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'button', function() {
-          $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
+    // Change is-checked class on buttons.
+    $('.button-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
+            $buttonGroup.find('.is-checked').removeClass('is-checked');
+            $(this).addClass('is-checked');
         });
-      });
+    });
 
-      function update_isotope() {
-        // Retrieve cached button click.
-        var defaultFilterValue = localStorage.getItem('filterValue');
-        if (defaultFilterValue == null) {
-          defaultFilterValue = ".highlight"
-        }
-        $grid.isotope({ filter: defaultFilterValue });
+    function update_isotope() {
+        var defaultFilterValue = localStorage.getItem('filterValue') || ".highlight";
+
+        // Initial filter
+        $grid.isotope({filter: defaultFilterValue});
+
+        // Update button classes
         var buttons = document.getElementsByClassName("button");
         for (var currButton of buttons) {
-          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-            currButton.classList.add('is-checked');
-          } else {
-            currButton.classList.remove('is-checked');
-          }
+            if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+                currButton.classList.add('is-checked');
+            } else {
+                currButton.classList.remove('is-checked');
+            }
         }
-      }
 
-      function toggle_bio() {
+        // Force a re-layout after a short delay to catch video rendering
+        setTimeout(function () {
+            $grid.isotope('layout');
+        }, 200);
+    }
+
+    // CRITICAL FIX: Trigger layout again once the entire page (media included) is ready
+    $(window).on('load', function () {
+        $grid.isotope('layout');
+    });
+
+    function toggle_bio() {
         var x = document.getElementById("more-bio");
         if (x.style.display === "none") {
-          x.style.display = "block";
+            x.style.display = "block";
         } else {
-          x.style.display = "none";
+            x.style.display = "none";
         }
-      }
+    }
 
-      function toggle_highlights() {
+    function toggle_highlights() {
         var x = document.getElementById("main-highlights");
         var y = document.getElementById("more-highlights");
         var b = document.getElementById("toggle_highlights_button")
         if (y.style.display === "none") {
-          x.style.display = "none";
-          y.style.display = "block";
-          b.innerHTML = "Show less"
-          update_isotope();
+            x.style.display = "none";
+            y.style.display = "block";
+            b.innerHTML = "Show less"
+            update_isotope();
         } else {
-          x.style.display = "block";
-          y.style.display = "none";
-          b.innerHTML = "Show more"
-          update_isotope();
+            x.style.display = "block";
+            y.style.display = "none";
+            b.innerHTML = "Show more"
+            update_isotope();
         }
-      }
+    }
 
-      update_isotope();
+    update_isotope();
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
