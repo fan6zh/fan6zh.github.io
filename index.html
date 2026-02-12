@@ -49,30 +49,34 @@
             color: #49bf9f !important;
         }
 
-        /* --- POLISHED DIVIDER LINE --- */
-        .grid-divider {
-            width: 100% !important;
-            height: 1px !important;
-            margin: 50px 0 30px 0 !important; /* More space above, less below */
-            background: radial-gradient(circle, var(--filter-inactive) 0%, rgba(0, 0, 0, 0) 100%) !important;
-            border: none !important;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-            overflow: visible !important;
-        }
+	/* 1. Hide by default so it doesn't flicker on refresh */
+	.grid-divider {
+	    display: none !important;
+	}
 
-        /* Optional: Add a subtle text label in the middle of the line */
-        .grid-divider::after {
-            content: "More Research";
-            background-color: var(--bg-color);
-            padding: 0 20px;
-            color: var(--filter-inactive);
-            font-family: 'Asap', sans-serif;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+	/* 2. Show ONLY when Isotope is NOT hiding it */
+	/* Isotope adds 'display: none' to hidden items; we override it ONLY for the divider */
+	.list-item.publication.grid-divider:not([style*="display: none"]) {
+	    display: flex !important;
+	    width: 100% !important;
+	    height: 1px !important;
+	    margin: 50px 0 30px 0 !important;
+	    background: radial-gradient(circle, var(--filter-inactive) 0%, rgba(0,0,0,0) 100%) !important;
+	    border: none !important;
+	    align-items: center;
+	    justify-content: center;
+	}
+
+	/* Label logic */
+	.grid-divider::after {
+	    content: "More Research";
+	    background-color: var(--bg-color);
+	    padding: 0 20px;
+	    color: var(--filter-inactive);
+	    font-family: 'Asap', sans-serif;
+	    font-size: 13px;
+	    text-transform: uppercase;
+	}
 
         [data-theme="dark"] .grid-divider {
             background: radial-gradient(circle, #444 0%, rgba(0, 0, 0, 0) 100%) !important;
@@ -825,28 +829,21 @@
         });
     });
 
-    function update_isotope() {
-        var defaultFilterValue = localStorage.getItem('filterValue') || ".highlight";
+	function update_isotope() {
+	    var defaultFilterValue = localStorage.getItem('filterValue') || ".highlight";
 
-        // Initial filter
-        $grid.isotope({filter: defaultFilterValue});
+	    // Update buttons
+	    $('.button').removeClass('is-checked');
+	    $('.button[data-filter="' + defaultFilterValue + '"]').addClass('is-checked');
 
-        // Update button classes
-        var buttons = document.getElementsByClassName("button");
-        for (var currButton of buttons) {
-            if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-                currButton.classList.add('is-checked');
-            } else {
-                currButton.classList.remove('is-checked');
-            }
-        }
+	    // Filter the grid
+	    $grid.isotope({ filter: defaultFilterValue });
 
-        // Force a re-layout after a short delay to catch video rendering
-        setTimeout(function () {
-            $grid.isotope('layout');
-        }, 200);
-    }
-
+	    // CRITICAL: Force the layout to hide/show the line correctly
+	    $grid.one('arrangeComplete', function() {
+		$grid.isotope('layout');
+	    });
+	}
     // CRITICAL FIX: Trigger layout again once the entire page (media included) is ready
     $(window).on('load', function () {
         $grid.isotope('layout');
