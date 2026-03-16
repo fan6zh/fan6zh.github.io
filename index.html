@@ -137,6 +137,16 @@
             filter: brightness(.85) contrast(1.1);
         }
     </style>
+    
+    <style>
+    .journal-link {
+        color: #ff5e00 !important; /* Deep Navy for light mode */
+        font-weight: 600;
+    }
+    [data-theme="dark"] .journal-link {
+        color: #58a6ff !important; /* Softer blue for dark mode */
+    }
+   </style>
 
     <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -201,17 +211,16 @@
 		    I am also a visiting researcher at
 		    <a href="https://www.imperial.ac.uk/" target="_blank" style="color: #007bff !important;">Imperial College London</a>. 
 		    I was an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow funded by
-		    <a href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/" target="_blank" style="color: #007bff !important;">Schmidt Futures</a>. 
+		    <a href="https://www.schmidtfutures.com/our-work/schmidt-ai-in-science-postdocs/" target="_blank" style="color: var(--title-color) !important; text-decoration: none !important;">Schmidt Futures</a>. 
 		    I received my Ph.D. degree from Imperial College London (advised by Prof.
-		    <a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank" style="color: #000 !important;">Yiannis Demiris</a>).
+		    <a href="https://www.imperial.ac.uk/people/y.demiris" target="_blank" style="color: var(--title-color) !important; text-decoration: none !important;">Yiannis Demiris</a>).
 		</p>
 
 		<p>
 		    My research interests cover many aspects of machine learning algorithms applied to general robot manipulation.
 		    My research has been accepted at
 		    <a href="https://www.science.org/doi/10.1126/scirobotics.abm6010" 
-		       target="_blank" 
-		       style="color: #007bff !important; font-weight: bold;">Science Robotics</a>
+target="_blank" class="journal-link">Science Robotics</a>
 		    and T-RO.
 		    I have been awarded
 		    <a href="https://queenmaryroboticsaward.blogspot.com/p/previous-recipients.html" 
@@ -220,8 +229,7 @@
 		    and 
 		    <a href="https://rai.ac.uk/ai-robotics-awards-2025/" 
 		       target="_blank" 
-		       style="color: #007bff !important;">Best Research Paper (Early Career Researcher), 2025 AI & Robotics Research Awards</a> 
-		    held by UKRI TAS Hub and Responsible Ai UK.
+		       style="color: var(--title-color) !important; text-decoration: none !important;">Best Research Paper (Early Career Researcher)</a>, 2025 AI & Robotics Research Awards held by UKRI TAS Hub and Responsible Ai UK.
 		</p>
     
             <div id="more-bio" style="display: None">
